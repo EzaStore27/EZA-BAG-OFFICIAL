@@ -1,204 +1,773 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>👜 EZA BAG OFFICIAL - Tas Premium</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Arial', sans-serif; line-height: 1.6; color: #333; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        /* Header */
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white; padding: 1rem 0; position: fixed; width: 100%; top: 0;
-            z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        nav { display: flex; justify-content: space-between; align-items: center;
-            max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-        .logo { font-size: 1.8rem; font-weight: bold; }
-        .nav-links { display: flex; list-style: none; gap: 2rem; }
-        .nav-links a { color: white; text-decoration: none; transition: opacity 0.3s; }
-        .nav-links a:hover { opacity: 0.8; }
-        .cart-icon { position: relative; font-size: 1.5rem; cursor: pointer; }
-        .cart-count { position: absolute; top: -8px; right: -8px; background: #ff4757; color: white;
-            border-radius: 50%; width: 20px; height: 20px; font-size: 0.8rem; display: flex;
-            align-items: center; justify-content: center; }
+<title>👜 EZA BAG OFFICIAL</title>
 
-        /* Hero */
-        .hero { background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-            url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23f8f9fa" width="1200" height="600"/><circle fill="%23e9ecef" cx="200" cy="200" r="150"/><circle fill="%23dee2e6" cx="1000" cy="400" r="120"/><rect fill="%23ced4da" x="800" y="100" width="200" height="300"/></svg>');
-            background-size: cover; height: 100vh; display: flex; align-items: center;
-            justify-content: center; text-align: center; color: white; margin-top: 80px;
-        }
-        .hero-content h1 { font-size: 3.5rem; margin-bottom: 1rem; }
-        .hero-content p { font-size: 1.3rem; margin-bottom: 2rem; }
-        .cta-button { display: inline-block; background: #ff6b6b; color: white; padding: 15px 30px;
-            text-decoration: none; border-radius: 50px; font-size: 1.2rem; transition: all 0.3s; }
-        .cta-button:hover { background: #ff5252; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(255,107,107,0.3); }
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 
-        /* Products */
-        .products { padding: 100px 2rem; max-width: 1200px; margin: 0 auto; }
-        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; color: #333; }
-        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        .product-card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: all 0.3s; cursor: pointer; }
-        .product-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
+body{
+    font-family:Arial, sans-serif;
+    background:#f5f5f5;
+    color:#333;
+}
 
-        /* GAMBAR FIX - TAMBAHAN PENTING! */
-        .product-image { width: 85% !important; height: 220px; object-fit: contain; background: #f8f9fa; display: block !important; margin: 15px auto;}
+/* HEADER */
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+    background:linear-gradient(135deg,#667eea,#764ba2);
+    padding:15px 0;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
 
-        .product-info { padding: 1.5rem; }
-        .product-title { font-size: 1.3rem; margin-bottom: 0.5rem; color: #333; }
-        .product-price { font-size: 1.5rem; font-weight: bold; color: #ff6b6b; margin-bottom: 1rem; }
-        .product-add-to-cart { width: 100%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;
-            border: none; padding: 12px; border-radius: 10px; font-size: 1rem; cursor: pointer; transition: all 0.3s; }
-        .product-add-to-cart:hover { transform: scale(1.05); }
+nav{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 20px;
+}
 
-        /* Cart Modal */
-        .cart-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.5); z-index: 2000; }
-        .cart-content { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            background: white; padding: 2rem; border-radius: 20px; max-width: 500px; width: 90%;
-            max-height: 80vh; overflow-y: auto; }
-        .close-cart { float: right; font-size: 2rem; cursor: pointer; color: #999; }
-        .cart-item { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; border-bottom: 1px solid #eee; }
-        .total { font-size: 1.5rem; font-weight: bold; text-align: center; margin-top: 1rem; color: #333; }
-        .checkout-btn { width: 100%; background: #28a745; color: white; border: none; padding: 15px;
-            border-radius: 10px; font-size: 1.2rem; cursor: pointer; margin-top: 1rem; }
+.logo{
+    color:white;
+    font-size:2rem;
+    font-weight:bold;
+}
 
-        /* Footer */
-        footer { background: #333; color: white; text-align: center; padding: 3rem 2rem; }
+.nav-links{
+    display:flex;
+    gap:30px;
+    list-style:none;
+}
 
-        @media (max-width: 768px) { .nav-links { display: none; } .hero-content h1 { font-size: 2.5rem; } }
-    </style>
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.cart-icon{
+    position:relative;
+    color:white;
+    font-size:1.5rem;
+    cursor:pointer;
+}
+
+.cart-count{
+    position:absolute;
+    top:-10px;
+    right:-10px;
+    background:red;
+    color:white;
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    font-size:12px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* HERO */
+.hero{
+    margin-top:80px;
+    height:400px;
+    background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
+    url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200&auto=format&fit=crop');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+}
+
+.hero-content h1{
+    font-size:3rem;
+    margin-bottom:15px;
+}
+
+.hero-content p{
+    font-size:1.2rem;
+    margin-bottom:20px;
+}
+
+.cta-button{
+    background:#ff6b6b;
+    color:white;
+    padding:15px 30px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.cta-button:hover{
+    background:#ff5252;
+}
+
+/* PRODUCTS */
+.products{
+    max-width:1200px;
+    margin:auto;
+    padding:80px 20px;
+}
+
+.section-title{
+    text-align:center;
+    font-size:2.5rem;
+    margin-bottom:50px;
+}
+
+.products-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.product-card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.product-card:hover{
+    transform:translateY(-10px);
+}
+
+/* IMAGE FIX */
+.product-image{
+    width:70%;
+    height:180px;
+    object-fit:contain;
+    display:block;
+    margin:20px auto 10px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.product-image:hover{
+    transform:scale(1.05);
+}
+
+.product-info{
+    padding:20px;
+}
+
+.product-info h3{
+    margin-bottom:10px;
+}
+
+.product-price{
+    color:#ff6b6b;
+    font-size:1.7rem;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+.product-add-to-cart{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    background:linear-gradient(135deg,#667eea,#764ba2);
+    color:white;
+    font-size:1rem;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.product-add-to-cart:hover{
+    transform:scale(1.03);
+}
+
+/* CART */
+.cart-modal{
+    display:none;
+    position:fixed;
+    z-index:3000;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+}
+
+.cart-content{
+    background:white;
+    width:90%;
+    max-width:500px;
+    margin:80px auto;
+    padding:25px;
+    border-radius:20px;
+}
+
+.close-cart{
+    float:right;
+    font-size:2rem;
+    cursor:pointer;
+}
+
+.cart-item{
+    display:flex;
+    justify-content:space-between;
+    margin:15px 0;
+}
+
+.total{
+    margin-top:20px;
+    font-size:1.5rem;
+    font-weight:bold;
+}
+
+.checkout-btn{
+    width:100%;
+    margin-top:20px;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:#28a745;
+    color:white;
+    font-size:1rem;
+    cursor:pointer;
+}
+
+/* IMAGE MODAL */
+#imageModal{
+    display:none;
+    position:fixed;
+    z-index:5000;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.9);
+    justify-content:center;
+    align-items:center;
+}
+
+#modalImage{
+    max-width:90%;
+    max-height:90%;
+    border-radius:20px;
+}
+
+.close-image{
+    position:absolute;
+    top:20px;
+    right:35px;
+    color:white;
+    font-size:40px;
+    cursor:pointer;
+}
+
+/* FOOTER */
+footer{
+    background:#333;
+    color:white;
+    text-align:center;
+    padding:40px 20px;
+}
+
+footer a{
+    color:#25D366;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero-content h1{
+        font-size:2rem;
+    }
+
+    .section-title{
+        font-size:2rem;
+    }
+
+}
+</style>
 </head>
+
 <body>
-    <!-- Header EZA BAG OFFICIAL -->
-    <header>
-        <nav>
-            <div class="logo">👜 EZA BAG OFFICIAL</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#products">Produk</a></li>
-                <li><a href="#contact">Kontak</a></li>
-            </ul>
-            <div class="cart-icon" onclick="toggleCart()">
-                <i class="fas fa-shopping-cart"></i>
-                <span class="cart-count" id="cartCount">0</span>
-            </div>
-        </nav>
-    </header>
 
-    <!-- Hero EZA BAG -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>EZA BAG OFFICIAL</h1>
-            <p>Tas Premium Kualitas Terbaik | Siap Kirim Seluruh Indonesia!</p>
-            <a href="#products" class="cta-button">🛒 Lihat Koleksi</a>
-        </div>
-    </section>
+<header>
+<nav>
+    <div class="logo">👜 EZA BAG OFFICIAL</div>
 
-    <!-- Products EZA BAG -->
-    <section class="products" id="products">
-        <h2 class="section-title">Koleksi Tas EZA BAG Terbaru</h2>
-        <div class="products-grid" id="productsGrid"></div>
-    </section>
+    <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#products">Produk</a></li>
+        <li><a href="#contact">Kontak</a></li>
+    </ul>
 
-    <!-- Cart Modal -->
-    <div class="cart-modal" id="cartModal">
-        <div class="cart-content">
-            <span class="close-cart" onclick="toggleCart()">&times;</span>
-            <h3>🛒 Keranjang EZA BAG</h3>
-            <div id="cartItems"></div>
-            <div class="total">Total: <span id="cartTotal">Rp 0</span></div>
-            <button class="checkout-btn" onclick="checkout()">✅ Checkout & Order</button>
-        </div>
+    <div class="cart-icon" onclick="toggleCart()">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count" id="cartCount">0</span>
     </div>
+</nav>
+</header>
 
-    <!-- Footer EZA BAG -->
-    <footer id="contact">
-        <h3>📞 Hubungi EZA BAG OFFICIAL</h3>
-        <p>📱 WA: <a href="https://wa.me/6287877157090" style="color:#25D366;">0878-7715-7090</a> | 📧 Eza.bag@gmail.com</p>
-        <p>🚚 Siap kirim ke seluruh Indonesia | © 2024 EZA BAG OFFICIAL</p>
-    </footer>
+<!-- HERO -->
+<section class="hero">
+<div class="hero-content">
+    <h1>EZA BAG OFFICIAL</h1>
+    <p>Tas Premium Kualitas Terbaik</p>
+    <a href="#products" class="cta-button">🛒 Lihat Koleksi</a>
+</div>
+</section>
 
-    <!-- SCRIPT EZA BAG - 100% FIX -->
-    <script>
-        const products = [
-            { id: 1, name: 'Tas Mini Cantik', price: 490000, image: 'Tas-mini-490.png' },
-            { id: 2, name: 'Tas Tote Bag Krem', price: 450000, image: 'Tote-Bag-krem.png' },
-            { id: 3, name: 'Tas Ransel Cantik', price: 470000, image: 'Tas-ransel-470.png' },
-            { id: 4, name: 'Tas Sekolah Anak', price: 300000, image: 'tas-sekolah-300.png' },
-            { id: 5, name: 'Tas Sekolah Premium', price: 450000, image: 'tas-sekolah-450.png' },
-            { id: 6, name: 'Tas Travel premium', price: 500000, image: 'tas-travel-500.png' }
-        ];
-        let cart = [];
+<!-- PRODUCTS -->
+<section class="products" id="products">
 
-        document.addEventListener('DOMContentLoaded', () => {
-            loadProducts(); updateCartCount();
-        });
+<h2 class="section-title">
+Koleksi Tas EZA BAG Terbaru
+</h2>
 
-        function loadProducts() {
-            document.getElementById('productsGrid').innerHTML = products.map(p => `
-                <div class="product-card">
-                    <img src="${p.image}" alt="${p.name}" class="product-image" 
-                         onerror="this.src='https://via.placeholder.com/300x250/667eea/fff?text=👜';">
-                    <div class="product-info">
-                        <h3>${p.name}</h3>
-                        <div class="product-price">Rp ${p.price.toLocaleString('id-ID')}</div>
-                        <button class="product-add-to-cart" onclick="addToCart(${p.id})">
-                            <i class="fas fa-cart-plus"></i> Beli
-                        </button>
-                    </div>
-                </div>`).join('');
-        }
+<div class="products-grid" id="productsGrid"></div>
 
-        function addToCart(id) {
-            const p = products.find(x => x.id === id);
-            const exist = cart.find(x => x.id === id);
-            if (exist) exist.quantity++; else cart.push({...p, quantity: 1});
-            updateCartCount(); showNotification('✅ Ditambahkan ke keranjang!');
-        }
+</section>
 
-        function updateCartCount() {
-            document.getElementById('cartCount').textContent = cart.reduce((s, x) => s + x.quantity, 0);
-        }
+<!-- CART -->
+<div class="cart-modal" id="cartModal">
 
-        function toggleCart() {
-            const m = document.getElementById('cartModal');
-            m.style.display = m.style.display === 'block' ? 'none' : 'block';
-            if (m.style.display === 'block') displayCart();
-        }
+<div class="cart-content">
 
-        function displayCart() {
-            const items = document.getElementById('cartItems');
-            const total = cart.reduce((s, x) => s + (x.price * x.quantity), 0);
-            items.innerHTML = cart.length ? cart.map(x => `
-                <div class="cart-item">
-                    <span>${x.name} <small>x${x.quantity}</small></span>
-                    <span>Rp ${(x.price*x.quantity).toLocaleString('id-ID')}</span>
-                </div>`).join('') : '<p>Keranjang kosong</p>';
-            document.getElementById('cartTotal').textContent = `Rp ${total.toLocaleString('id-ID')}`;
-        }
+<span class="close-cart" onclick="toggleCart()">
+&times;
+</span>
 
-        function checkout() {
-            if (!cart.length) return alert('Keranjang kosong!');
-            const total = cart.reduce((s, x) => s + (x.price * x.quantity), 0);
-            const pesan = `Halo EZA BAG! Order:\n\n${cart.map(x => `${x.name} x${x.quantity}`).join('\n')}\nTotal: Rp ${total.toLocaleString('id-ID')}`;
-            alert(`✅ TERIMA KASIH!\n\n${pesan}\n\nKlik WA di bawah untuk order!`);
-            cart = []; updateCartCount(); toggleCart();
-        }
+<h2>🛒 Keranjang</h2>
 
-        function showNotification(msg) {
-            const n = document.createElement('div');
-            n.style.cssText = 'position:fixed;top:100px;right:20px;background:#28a745;color:white;padding:15px 20px;border-radius:10px;z-index:3000;font-weight:bold;';
-            n.textContent = msg; document.body.appendChild(n); setTimeout(() => n.remove(), 2000);
-        }
+<div id="cartItems"></div>
 
-        window.onclick = e => e.target.id === 'cartModal' && toggleCart();
-    </script>
+<div class="total">
+Total:
+<span id="cartTotal">Rp 0</span>
+</div>
+
+<button class="checkout-btn" onclick="checkout()">
+✅ Checkout
+</button>
+
+</div>
+</div>
+
+<!-- IMAGE MODAL -->
+<div id="imageModal">
+
+<span class="close-image" onclick="closeImageModal()">
+&times;
+</span>
+
+<img id="modalImage">
+
+</div>
+
+<!-- FOOTER -->
+<footer id="contact">
+
+<h2>📞 Hubungi Kami</h2>
+
+<p>
+📱 WA:
+<a href="https://wa.me/6287877157090">
+0878-7715-7090
+</a>
+</p>
+
+<p>
+📧 Email: eza.bag@gmail.com
+</p>
+
+<p>
+© 2024 EZA BAG OFFICIAL
+</p>
+
+</footer>
+
+<script>
+
+const products = [
+
+{
+id:1,
+name:'Tas Mini Cantik',
+price:490000,
+image:'images/tas-mini-490.png'
+},
+
+{
+id:2,
+name:'Tas Tote Bag Krem',
+price:450000,
+image:'images/tote-bag-krem.png'
+},
+
+{
+id:3,
+name:'Tas Ransel Cantik',
+price:470000,
+image:'images/tas-ransel-470.png'
+},
+
+{
+id:4,
+name:'Tas Sekolah Anak',
+price:300000,
+image:'images/tas-sekolah-300.png'
+},
+
+{
+id:5,
+name:'Tas Sekolah Premium',
+price:450000,
+image:'images/tas-sekolah-450.png'
+},
+
+{
+id:6,
+name:'Tas Travel Premium',
+price:500000,
+image:'images/tas-travel-500.png'
+}
+
+];
+
+let cart = [];
+
+document.addEventListener('DOMContentLoaded',()=>{
+
+loadProducts();
+updateCartCount();
+
+});
+
+function loadProducts(){
+
+document.getElementById('productsGrid').innerHTML =
+products.map(p=>`
+
+<div class="product-card">
+
+<img src="${p.image}"
+alt="${p.name}"
+class="product-image"
+onclick="openImageModal('${p.image}')"
+onerror="this.src='https://via.placeholder.com/300x300/667eea/ffffff?text=EZA+BAG';">
+
+<div class="product-info">
+
+<h3>${p.name}</h3>
+
+<div class="product-price">
+Rp ${p.price.toLocaleString('id-ID')}
+</div>
+
+<button class="product-add-to-cart"
+onclick="addToCart(${p.id})">
+
+<i class="fas fa-cart-plus"></i>
+Beli
+
+</button>
+
+</div>
+</div>
+
+`).join('');
+
+}
+
+function addToCart(id){
+
+const product = products.find(x=>x.id===id);
+
+const existing = cart.find(x=>x.id===id);
+
+if(existing){
+
+existing.quantity++;
+
+}else{
+
+cart.push({...product,quantity:1});
+
+}
+
+updateCartCount();
+
+showNotification('✅ Ditambahkan ke keranjang');
+
+}
+
+function updateCartCount(){
+
+document.getElementById('cartCount').textContent =
+cart.reduce((sum,item)=>sum+item.quantity,0);
+
+}
+
+function toggleCart(){
+
+const modal = document.getElementById('cartModal');
+
+modal.style.display =
+modal.style.display === 'block'
+? 'none'
+: 'block';
+
+if(modal.style.display === 'block'){
+
+displayCart();
+
+}
+
+}
+
+function displayCart(){
+
+const cartItems = document.getElementById('cartItems');
+
+const total = cart.reduce(
+(sum,item)=>sum+(item.price*item.quantity),0);
+
+cartItems.innerHTML =
+cart.length
+?
+
+cart.map(item=>`
+
+<div class="cart-item">
+
+<span>
+${item.name} x${item.quantity}
+</span>
+
+<span>
+Rp ${(item.price*item.quantity).toLocaleString('id-ID')}
+</span>
+
+</div>
+
+`).join('')
+
+:
+
+'<p>Keranjang kosong</p>';
+
+document.getElementById('cartTotal').textContent =
+`Rp ${total.toLocaleString('id-ID')}`;
+
+}
+
+function checkout(){
+
+if(!cart.length){
+
+alert('Keranjang kosong!');
+return;
+
+}
+
+const total = cart.reduce(
+(sum,item)=>sum+(item.price*item.quantity),0);
+
+const pesan =
+`Halo EZA BAG OFFICIAL!
+
+Saya ingin order:
+
+${cart.map(item=>
+`${item.name} x${item.quantity}`
+).join('\n')}
+
+Total:
+Rp ${total.toLocaleString('id-ID')}`;
+
+window.open(
+`https://wa.me/6287877157090?text=${encodeURIComponent(pesan)}`,
+'_blank'
+);
+
+}
+
+function showNotification(text){
+
+const notif = document.createElement('div');
+
+notif.style.cssText = `
+position:fixed;
+top:100px;
+right:20px;
+background:#28a745;
+color:white;
+padding:15px 20px;
+border-radius:10px;
+z-index:6000;
+font-weight:bold;
+`;
+
+notif.textContent = text;
+
+document.body.appendChild(notif);
+
+setTimeout(()=>{
+
+notif.remove();
+
+},2000);
+
+}
+
+function openImageModal(src){
+
+document.getElementById('imageModal').style.display='flex';
+
+document.getElementById('modalImage').src=src;
+
+}
+
+function closeImageModal(){
+
+document.getElementById('imageModal').style.display='none';
+
+}
+
+window.onclick = function(e){
+
+if(e.target.id==='imageModal'){
+
+closeImageModal();
+
+}
+
+if(e.target.id==='cartModal'){
+
+toggleCart();
+
+}
+
+}
+<!-- GANTI FUNCTION checkout() LAMA DENGAN YANG INI -->
+
+function checkout(){
+
+    if(!cart.length){
+
+        alert('Keranjang kosong!');
+        return;
+
+    }
+
+    const total = cart.reduce(
+        (sum,item)=>sum+(item.price*item.quantity),0
+    );
+
+    // =========================
+    // DATA PEMBAYARAN TRANSFER
+    // =========================
+
+    const bank = 'BCA';
+    const norek = '1234567890';
+    const atasNama = 'EZA BAG OFFICIAL';
+
+    // =========================
+    // DETAIL ORDER
+    // =========================
+
+    const detailOrder = cart.map(item =>
+
+        `• ${item.name}
+Qty : ${item.quantity}
+Subtotal : Rp ${(item.price * item.quantity).toLocaleString('id-ID')}`
+
+    ).join('\n\n');
+
+    // =========================
+    // PESAN WHATSAPP
+    // =========================
+
+    const pesan = `Halo EZA BAG OFFICIAL 👋
+
+Saya ingin melakukan pemesanan:
+
+${detailOrder}
+
+========================
+TOTAL PEMBAYARAN
+Rp ${total.toLocaleString('id-ID')}
+========================
+
+PEMBAYARAN TRANSFER:
+Bank : ${bank}
+No Rek : ${norek}
+Atas Nama : ${atasNama}
+
+Mohon konfirmasi setelah transfer 🙏`;
+
+    // =========================
+    // POPUP INFO PEMBAYARAN
+    // =========================
+
+    alert(
+`✅ PESANAN BERHASIL DIBUAT
+
+Silakan lakukan pembayaran:
+
+========================
+BANK : ${bank}
+NO REK : ${norek}
+A/N : ${atasNama}
+========================
+
+TOTAL:
+Rp ${total.toLocaleString('id-ID')}
+
+Setelah transfer klik OK
+untuk lanjut ke WhatsApp`
+    );
+
+    // =========================
+    // BUKA WHATSAPP
+    // =========================
+
+    window.open(
+        `https://wa.me/6287877157090?text=${encodeURIComponent(pesan)}`,
+        '_blank'
+    );
+
+    // =========================
+    // RESET CART
+    // =========================
+
+    cart = [];
+
+    updateCartCount();
+
+    toggleCart();
+
+}
+</script>
+
 </body>
 </html>
