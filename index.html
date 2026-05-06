@@ -48,7 +48,7 @@
         .product-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
 
         /* GAMBAR FIX - TAMBAHAN PENTING! */
-        .product-image { width: 100% !important; height: 250px; object-fit: cover; background: #f8f9fa; display: block !important; }
+        .product-image { width: 85% !important; height: 220px; object-fit: contain; background: #f8f9fa; display: block !important; margin: 15px auto;}
 
         .product-info { padding: 1.5rem; }
         .product-title { font-size: 1.3rem; margin-bottom: 0.5rem; color: #333; }
@@ -145,7 +145,7 @@
             document.getElementById('productsGrid').innerHTML = products.map(p => `
                 <div class="product-card">
                     <img src="${p.image}" alt="${p.name}" class="product-image" 
-                         onerror="this.src='https://via.placeholder.com/250x250/667eea/fff?text=👜';">
+                         onerror="this.src='https://via.placeholder.com/300x250/667eea/fff?text=👜';">
                     <div class="product-info">
                         <h3>${p.name}</h3>
                         <div class="product-price">Rp ${p.price.toLocaleString('id-ID')}</div>
