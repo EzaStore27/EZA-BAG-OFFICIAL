@@ -751,22 +751,18 @@ untuk lanjut ke WhatsApp`
     // BUKA WHATSAPP
     // =========================
 
-    window.open(
-        `https://wa.me/6287877157090?text=${encodeURIComponent(pesan)}`,
-        '_blank'
-    );
+    window.location.href =
+`https://wa.me/6287877157090?text=${encodeURIComponent(pesan)}`;
 
-    // =========================
-    // RESET CART
-    // =========================
+ // RESET CART
+cart = [];
 
-    cart = [];
+updateCartCount();
 
-    updateCartCount();
-
-    toggleCart();
+toggleCart();
 
 }
+
 </script>
 
 </body>
