@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 <title>👜 EZA BAG OFFICIAL</title>
 
 <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#ee4d2d">
+<meta name="theme-color" content="#ff6b6b">
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 
@@ -27,249 +26,207 @@ body{
 }
 
 /* HEADER */
-
 header{
     position:fixed;
     top:0;
     width:100%;
     z-index:1000;
-    background:#ee4d2d;
-    padding:15px 0;
-    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    background:white;
+    box-shadow:0 2px 10px rgba(0,0,0,0.08);
 }
 
-nav{
-    max-width:1200px;
-    margin:auto;
+.top-header{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:0 20px;
+    padding:12px 15px;
 }
 
 .logo{
-    color:white;
-    font-size:2rem;
+    color:#ff6b6b;
+    font-size:1.4rem;
     font-weight:bold;
 }
 
-.nav-links{
-    display:flex;
-    gap:25px;
-    list-style:none;
-}
-
-.nav-links a{
-    color:white;
-    text-decoration:none;
-    font-weight:bold;
-}
-
-.header-right{
+.header-icons{
     display:flex;
     align-items:center;
-    gap:15px;
+    gap:18px;
 }
 
-/* SEARCH */
-
-.search-box{
-    background:white;
-    border-radius:50px;
-    overflow:hidden;
-    display:flex;
-    align-items:center;
-}
-
-.search-box input{
-    border:none;
-    padding:10px 15px;
-    outline:none;
-    width:180px;
-}
-
-.search-box button{
-    border:none;
-    background:#fff;
-    padding:10px 15px;
+.header-icons i{
+    font-size:1.3rem;
     cursor:pointer;
-    color:#ee4d2d;
+    color:#444;
 }
-
-/* LOGIN */
-
-.login-btn{
-    border:none;
-    background:white;
-    color:#ee4d2d;
-    padding:10px 18px;
-    border-radius:50px;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-/* CART */
 
 .cart-icon{
     position:relative;
-    color:white;
-    font-size:1.5rem;
-    cursor:pointer;
 }
 
 .cart-count{
     position:absolute;
-    top:-10px;
+    top:-8px;
     right:-10px;
-    background:white;
-    color:#ee4d2d;
-    width:20px;
-    height:20px;
+    background:red;
+    color:white;
+    width:18px;
+    height:18px;
     border-radius:50%;
-    font-size:12px;
+    font-size:11px;
     display:flex;
     justify-content:center;
     align-items:center;
-    font-weight:bold;
+}
+
+/* SEARCH */
+.search-box{
+    padding:0 15px 15px;
+}
+
+.search-box input{
+    width:100%;
+    padding:13px 15px;
+    border:none;
+    border-radius:12px;
+    background:#f1f1f1;
+    font-size:1rem;
 }
 
 /* HERO */
-
 .hero{
-    margin-top:80px;
-    min-height:450px;
-    background:
-    linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
-    url('https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=1200&auto=format&fit=crop');
-
-    background-size:cover;
-    background-position:center;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-
-    color:white;
+    margin-top:130px;
     padding:20px;
 }
 
-.hero-content h1{
-    font-size:3rem;
-    margin-bottom:15px;
-}
-
-.hero-content p{
-    font-size:1.2rem;
-    margin-bottom:25px;
-}
-
-.cta-button{
-    background:#ee4d2d;
-    color:white;
-    padding:15px 30px;
-    border-radius:50px;
-    text-decoration:none;
-    font-weight:bold;
-}
-
-/* CATEGORY */
-
-.categories{
-    max-width:1200px;
-    margin:40px auto;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
-    gap:20px;
-    padding:0 20px;
-}
-
-.category-card{
-    background:white;
+.banner{
+    background:linear-gradient(135deg,#ff6b6b,#ff8e53);
     border-radius:20px;
-    padding:25px 10px;
-    text-align:center;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
-    cursor:pointer;
-    transition:0.3s;
+    padding:30px 20px;
+    color:white;
 }
 
-.category-card:hover{
-    transform:translateY(-5px);
-}
-
-.category-card i{
+.banner h1{
     font-size:2rem;
-    color:#ee4d2d;
     margin-bottom:10px;
 }
 
-/* PRODUCTS */
+.banner p{
+    margin-bottom:20px;
+}
 
-.products{
-    max-width:1200px;
+.banner button{
+    background:white;
+    color:#ff6b6b;
+    border:none;
+    padding:12px 20px;
+    border-radius:10px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* MENU ICON */
+.menu-icons{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    padding:20px 15px;
+}
+
+.menu-item{
+    text-align:center;
+    cursor:pointer;
+}
+
+.menu-circle{
+    width:65px;
+    height:65px;
     margin:auto;
-    padding:50px 20px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#667eea,#764ba2);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    font-size:1.5rem;
+    margin-bottom:8px;
+    transition:0.3s;
+}
+
+.menu-circle:hover{
+    transform:scale(1.1);
+}
+
+.menu-item span{
+    font-size:0.9rem;
+    font-weight:bold;
+}
+
+/* PRODUCTS */
+.products{
+    padding:20px 15px 100px;
 }
 
 .section-title{
-    text-align:center;
-    font-size:2.5rem;
-    margin-bottom:40px;
+    font-size:1.5rem;
+    margin-bottom:20px;
 }
 
 .products-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:25px;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
 }
 
 .product-card{
     background:white;
-    border-radius:20px;
+    border-radius:18px;
     overflow:hidden;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    box-shadow:0 3px 10px rgba(0,0,0,0.08);
     transition:0.3s;
 }
 
 .product-card:hover{
-    transform:translateY(-8px);
+    transform:translateY(-5px);
 }
 
 .product-image{
-    width:70%;
-    height:220px;
+    width:100%;
+    height:180px;
     object-fit:contain;
-    display:block;
-    margin:20px auto;
+    background:#fff;
+    padding:10px;
     cursor:pointer;
 }
 
 .product-info{
-    padding:20px;
+    padding:12px;
+}
+
+.product-info h3{
+    font-size:1rem;
+    margin-bottom:8px;
 }
 
 .product-price{
-    color:#ee4d2d;
-    font-size:1.5rem;
+    color:#ff6b6b;
     font-weight:bold;
-    margin:10px 0;
+    font-size:1.1rem;
+    margin-bottom:10px;
 }
 
 .product-add-to-cart{
     width:100%;
     border:none;
-    padding:14px;
-    border-radius:10px;
-    background:#ee4d2d;
+    background:linear-gradient(135deg,#667eea,#764ba2);
     color:white;
-    font-size:1rem;
+    padding:10px;
+    border-radius:10px;
     cursor:pointer;
 }
 
-/* CART */
-
-.cart-modal{
+/* IMAGE MODAL */
+#imageModal{
     display:none;
     position:fixed;
     z-index:5000;
@@ -277,14 +234,43 @@ nav{
     top:0;
     width:100%;
     height:100%;
-    background:rgba(0,0,0,0.6);
+    background:rgba(0,0,0,0.9);
+    justify-content:center;
+    align-items:center;
+}
+
+#modalImage{
+    max-width:90%;
+    max-height:90%;
+    border-radius:15px;
+}
+
+.close-image{
+    position:absolute;
+    top:20px;
+    right:30px;
+    color:white;
+    font-size:40px;
+    cursor:pointer;
+}
+
+/* CART */
+.cart-modal{
+    display:none;
+    position:fixed;
+    z-index:4000;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.5);
 }
 
 .cart-content{
     background:white;
     width:90%;
-    max-width:500px;
-    margin:80px auto;
+    max-width:450px;
+    margin:70px auto;
     padding:25px;
     border-radius:20px;
 }
@@ -303,25 +289,23 @@ nav{
 
 .total{
     margin-top:20px;
-    font-size:1.5rem;
+    font-size:1.3rem;
     font-weight:bold;
 }
 
 .checkout-btn{
     width:100%;
-    margin-top:20px;
     padding:15px;
     border:none;
-    border-radius:10px;
     background:#28a745;
     color:white;
-    font-size:1rem;
+    border-radius:12px;
+    margin-top:20px;
     cursor:pointer;
 }
 
-/* IMAGE MODAL */
-
-#imageModal{
+/* LOGIN MODAL */
+.login-modal{
     display:none;
     position:fixed;
     z-index:6000;
@@ -329,87 +313,65 @@ nav{
     top:0;
     width:100%;
     height:100%;
-    background:rgba(0,0,0,0.9);
-    justify-content:center;
-    align-items:center;
-}
-
-#modalImage{
-    max-width:90%;
-    max-height:90%;
-    border-radius:20px;
-}
-
-.close-image{
-    position:absolute;
-    top:20px;
-    right:35px;
-    color:white;
-    font-size:45px;
-    cursor:pointer;
-}
-
-/* LOGIN MODAL */
-
-.login-modal{
-    display:none;
-    position:fixed;
-    z-index:7000;
-    left:0;
-    top:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.6);
-
-    justify-content:center;
-    align-items:center;
+    background:rgba(0,0,0,0.5);
 }
 
 .login-content{
     background:white;
     width:90%;
     max-width:400px;
+    margin:80px auto;
+    padding:25px;
     border-radius:20px;
-    padding:30px;
     position:relative;
 }
 
+.close-login{
+    position:absolute;
+    right:20px;
+    top:15px;
+    font-size:2rem;
+    cursor:pointer;
+}
+
 .login-content h2{
-    text-align:center;
     margin-bottom:20px;
+    text-align:center;
 }
 
 .login-content input{
     width:100%;
-    padding:15px;
+    padding:14px;
     margin-bottom:15px;
-    border:1px solid #ddd;
+    border:none;
+    background:#f1f1f1;
     border-radius:10px;
 }
 
-.login-submit{
+.login-btn{
     width:100%;
-    padding:15px;
+    padding:14px;
     border:none;
     border-radius:10px;
-    background:#ee4d2d;
+    background:#ff6b6b;
     color:white;
+    font-size:1rem;
     cursor:pointer;
 }
 
 .voucher-box{
-    margin-top:20px;
     background:#fff3cd;
-    padding:15px;
+    color:#856404;
+    padding:12px;
     border-radius:10px;
+    margin-top:15px;
     text-align:center;
-    font-weight:bold;
+    display:none;
 }
 
 /* FOOTER */
-
 footer{
-    background:#333;
+    background:#222;
     color:white;
     text-align:center;
     padding:40px 20px;
@@ -417,22 +379,7 @@ footer{
 
 footer a{
     color:#25D366;
-}
-
-@media(max-width:768px){
-
-.nav-links{
-    display:none;
-}
-
-.search-box input{
-    width:100px;
-}
-
-.hero-content h1{
-    font-size:2rem;
-}
-
+    text-decoration:none;
 }
 
 </style>
@@ -440,32 +387,20 @@ footer a{
 
 <body>
 
+<!-- HEADER -->
 <header>
-<nav>
+
+<div class="top-header">
 
 <div class="logo">
 👜 EZA BAG
 </div>
 
-<ul class="nav-links">
-<li><a href="#">Home</a></li>
-<li><a href="#products">Produk</a></li>
-<li><a href="#contact">Kontak</a></li>
-</ul>
+<div class="header-icons">
 
-<div class="header-right">
-
-<div class="search-box">
-<input type="text" placeholder="Cari tas...">
-<button>
 <i class="fas fa-search"></i>
-</button>
-</div>
 
-<button class="login-btn" onclick="openLogin()">
-<i class="fas fa-user"></i>
-Login
-</button>
+<i class="fas fa-user" onclick="openLogin()"></i>
 
 <div class="cart-icon" onclick="toggleCart()">
 <i class="fas fa-shopping-cart"></i>
@@ -474,63 +409,71 @@ Login
 
 </div>
 
-</nav>
+</div>
+
+<div class="search-box">
+<input type="text" placeholder="Cari tas favorit kamu...">
+</div>
+
 </header>
 
 <!-- HERO -->
-
 <section class="hero">
 
-<div class="hero-content">
+<div class="banner">
 
-<h1>
-EZA BAG OFFICIAL
-</h1>
+<h1>Diskon 5% User Baru 🎉</h1>
 
 <p>
-Tas Premium Fashion Kekinian
+Login / Signup sekarang dan dapat voucher spesial!
 </p>
 
-<a href="#products" class="cta-button">
-🛒 Belanja Sekarang
-</a>
+<button onclick="openLogin()">
+Login Sekarang
+</button>
 
 </div>
 
 </section>
 
-<!-- CATEGORY -->
+<!-- MENU -->
+<section class="menu-icons">
 
-<section class="categories">
-
-<div class="category-card">
+<div class="menu-item" onclick="scrollProduk()">
+<div class="menu-circle">
 <i class="fas fa-shopping-bag"></i>
-<p>Tote Bag</p>
+</div>
+<span>Tas</span>
 </div>
 
-<div class="category-card">
-<i class="fas fa-briefcase"></i>
-<p>Travel</p>
+<div class="menu-item" onclick="scrollProduk()">
+<div class="menu-circle">
+<i class="fas fa-suitcase"></i>
+</div>
+<span>Travel</span>
 </div>
 
-<div class="category-card">
+<div class="menu-item" onclick="scrollProduk()">
+<div class="menu-circle">
 <i class="fas fa-school"></i>
-<p>Sekolah</p>
+</div>
+<span>Sekolah</span>
 </div>
 
-<div class="category-card">
-<i class="fas fa-gem"></i>
-<p>Premium</p>
+<div class="menu-item" onclick="scrollProduk()">
+<div class="menu-circle">
+<i class="fas fa-gift"></i>
+</div>
+<span>Promo</span>
 </div>
 
 </section>
 
 <!-- PRODUCTS -->
-
 <section class="products" id="products">
 
 <h2 class="section-title">
-🔥 Produk Terbaru
+Produk Terbaru
 </h2>
 
 <div class="products-grid" id="productsGrid"></div>
@@ -538,7 +481,6 @@ Tas Premium Fashion Kekinian
 </section>
 
 <!-- CART -->
-
 <div class="cart-modal" id="cartModal">
 
 <div class="cart-content">
@@ -557,14 +499,41 @@ Total:
 </div>
 
 <button class="checkout-btn" onclick="checkout()">
-✅ Checkout
+Checkout Sekarang
 </button>
 
 </div>
+
+</div>
+
+<!-- LOGIN -->
+<div class="login-modal" id="loginModal">
+
+<div class="login-content">
+
+<span class="close-login" onclick="closeLogin()">
+&times;
+</span>
+
+<h2>Login / Signup</h2>
+
+<input type="text" id="username" placeholder="Masukkan nama">
+
+<input type="email" id="email" placeholder="Masukkan email">
+
+<button class="login-btn" onclick="signupUser()">
+Login / Signup
+</button>
+
+<div class="voucher-box" id="voucherBox">
+🎉 Selamat! Anda mendapat voucher diskon 5%
+</div>
+
+</div>
+
 </div>
 
 <!-- IMAGE MODAL -->
-
 <div id="imageModal">
 
 <span class="close-image" onclick="closeImageModal()">
@@ -575,64 +544,24 @@ Total:
 
 </div>
 
-<!-- LOGIN MODAL -->
-
-<div class="login-modal" id="loginModal">
-
-<div class="login-content">
-
-<span class="close-image"
-onclick="closeLogin()">
-&times;
-</span>
-
-<h2>
-👤 Login / Signup
-</h2>
-
-<input type="text"
-id="username"
-placeholder="Nama Anda">
-
-<input type="email"
-id="email"
-placeholder="Email">
-
-<button class="login-submit"
-onclick="loginUser()">
-
-Masuk / Daftar
-
-</button>
-
-<div class="voucher-box">
-
-🎁 Pengguna baru dapat voucher 5%
-
-</div>
-
-</div>
-</div>
-
 <!-- FOOTER -->
-
-<footer id="contact">
+<footer>
 
 <h2>📞 Hubungi Kami</h2>
 
 <p>
-📱 WA:
+WA :
 <a href="https://wa.me/6287877157090">
 0878-7715-7090
 </a>
 </p>
 
 <p>
-📧 Email: eza.bag@gmail.com
+📧 eza.bag@gmail.com
 </p>
 
 <p>
-© 2026 EZA BAG OFFICIAL
+© 2024 EZA BAG OFFICIAL
 </p>
 
 </footer>
@@ -650,43 +579,28 @@ image:'images/Tas-mini-490.png'
 
 {
 id:2,
-name:'Tas Tote Bag Krem',
+name:'Tas Tote Bag',
 price:450000,
 image:'images/Tote-Bag-krem.png'
 },
 
 {
 id:3,
-name:'Tas Ransel Cantik',
+name:'Tas Ransel',
 price:470000,
 image:'images/Tas-ransel-470.png'
 },
 
 {
 id:4,
-name:'Tas Sekolah Anak',
+name:'Tas Sekolah',
 price:300000,
 image:'images/tas-sekolah-300.png'
-},
-
-{
-id:5,
-name:'Tas Sekolah Premium',
-price:450000,
-image:'images/tas-sekolah-450.png'
-},
-
-{
-id:6,
-name:'Tas Travel Premium',
-price:500000,
-image:'images/tas-travel-500.png'
 }
 
 ];
 
 let cart = [];
-let currentUser = null;
 
 document.addEventListener('DOMContentLoaded',()=>{
 
@@ -705,7 +619,7 @@ products.map(p=>`
 <img src="${p.image}"
 class="product-image"
 onclick="openImageModal('${p.image}')"
-onerror="this.src='https://via.placeholder.com/300x300/ee4d2d/ffffff?text=EZA+BAG';">
+onerror="this.src='https://via.placeholder.com/300x300?text=EZA+BAG'">
 
 <div class="product-info">
 
@@ -718,12 +632,12 @@ Rp ${p.price.toLocaleString('id-ID')}
 <button class="product-add-to-cart"
 onclick="addToCart(${p.id})">
 
-<i class="fas fa-cart-plus"></i>
-Beli
+🛒 Beli
 
 </button>
 
 </div>
+
 </div>
 
 `).join('');
@@ -748,7 +662,7 @@ cart.push({...product,quantity:1});
 
 updateCartCount();
 
-alert('✅ Ditambahkan ke keranjang');
+alert('Produk ditambahkan');
 
 }
 
@@ -778,22 +692,17 @@ displayCart();
 
 function displayCart(){
 
-const cartItems = document.getElementById('cartItems');
-
 const total = cart.reduce(
-(sum,item)=>sum+(item.price*item.quantity),0);
+(sum,item)=>sum+(item.price*item.quantity),0
+);
 
-cartItems.innerHTML =
-cart.length
-?
+document.getElementById('cartItems').innerHTML =
 
 cart.map(item=>`
 
 <div class="cart-item">
 
-<span>
-${item.name} x${item.quantity}
-</span>
+<span>${item.name} x${item.quantity}</span>
 
 <span>
 Rp ${(item.price*item.quantity).toLocaleString('id-ID')}
@@ -801,14 +710,26 @@ Rp ${(item.price*item.quantity).toLocaleString('id-ID')}
 
 </div>
 
-`).join('')
-
-:
-
-'<p>Keranjang kosong</p>';
+`).join('');
 
 document.getElementById('cartTotal').textContent =
 `Rp ${total.toLocaleString('id-ID')}`;
+
+}
+
+function checkout(){
+
+if(!cart.length){
+
+alert('Keranjang kosong!');
+return;
+
+}
+
+window.open(
+'https://wa.me/6287877157090',
+'_blank'
+);
 
 }
 
@@ -826,63 +747,19 @@ document.getElementById('imageModal').style.display='none';
 
 }
 
-function checkout(){
-
-if(!cart.length){
-
-alert('Keranjang kosong!');
-return;
-
-}
-
-const total = cart.reduce(
-(sum,item)=>sum+(item.price*item.quantity),0
-);
-
-const diskon = total * 0.05;
-
-const totalBayar =
-currentUser ? total - diskon : total;
-
-const pesan = `Halo EZA BAG 👋
-
-Saya ingin order:
-
-${cart.map(item=>
-`${item.name} x${item.quantity}`
-).join('\n')}
-
-${currentUser ? 'Voucher 5% digunakan 🎉' : ''}
-
-Total:
-Rp ${totalBayar.toLocaleString('id-ID')}
-
-Transfer:
-BNI 1988112715
-A/N AHMAD SYAI`;
-
-window.open(
-`https://wa.me/6287877157090?text=${encodeURIComponent(pesan)}`,
-'_blank'
-);
-
-}
-
 function openLogin(){
 
-document.getElementById('loginModal')
-.style.display='flex';
+document.getElementById('loginModal').style.display='block';
 
 }
 
 function closeLogin(){
 
-document.getElementById('loginModal')
-.style.display='none';
+document.getElementById('loginModal').style.display='none';
 
 }
 
-function loginUser(){
+function signupUser(){
 
 const username =
 document.getElementById('username').value;
@@ -892,51 +769,43 @@ document.getElementById('email').value;
 
 if(username==='' || email===''){
 
-alert('Lengkapi data');
+alert('Isi data dulu');
 return;
 
 }
 
-currentUser = {
-username,
-email
-};
+document.getElementById('voucherBox').style.display='block';
 
-localStorage.setItem(
-'ezaUser',
-JSON.stringify(currentUser)
-);
+localStorage.setItem('voucher','DISKON5');
 
-document.querySelector('.login-btn')
-.innerHTML =
-`<i class="fas fa-user-check"></i> ${username}`;
+alert('Login berhasil! Voucher 5% didapat');
 
-alert(
-`🎉 Selamat ${username}
+}
 
-Anda mendapat voucher 5%`
-);
+function scrollProduk(){
+
+document.getElementById('products')
+.scrollIntoView({
+behavior:'smooth'
+});
+
+}
+
+window.onclick = function(e){
+
+if(e.target.id==='imageModal'){
+
+closeImageModal();
+
+}
+
+if(e.target.id==='loginModal'){
 
 closeLogin();
 
 }
 
-window.addEventListener('load',()=>{
-
-const savedUser =
-localStorage.getItem('ezaUser');
-
-if(savedUser){
-
-currentUser = JSON.parse(savedUser);
-
-document.querySelector('.login-btn')
-.innerHTML =
-`<i class="fas fa-user-check"></i> ${currentUser.username}`;
-
 }
-
-});
 
 </script>
 
