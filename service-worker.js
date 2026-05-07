@@ -1,4 +1,4 @@
-const CACHE_NAME = 'eza-bag-v2';
+const CACHE_NAME = 'ezabag';
 
 const urlsToCache = [
   '/',
