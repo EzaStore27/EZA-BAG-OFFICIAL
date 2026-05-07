@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>EZA BAG OFFICIAL</title>
+<title>👜 EZA BAG OFFICIAL</title>
 
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#ee4d2d">
@@ -35,7 +35,7 @@ header{
     z-index:1000;
     background:#ee4d2d;
     padding:15px 0;
-    box-shadow:0 3px 10px rgba(0,0,0,0.15);
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
 }
 
 nav{
@@ -49,17 +49,67 @@ nav{
 
 .logo{
     color:white;
-    font-size:1.8rem;
+    font-size:2rem;
     font-weight:bold;
 }
-<div class="user-menu">
 
-    <button class="login-btn" onclick="openLogin()">
-        <i class="fas fa-user"></i>
-        Login
-    </button>
+.nav-links{
+    display:flex;
+    gap:25px;
+    list-style:none;
+}
 
-</div>
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.header-right{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+/* SEARCH */
+
+.search-box{
+    background:white;
+    border-radius:50px;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+}
+
+.search-box input{
+    border:none;
+    padding:10px 15px;
+    outline:none;
+    width:180px;
+}
+
+.search-box button{
+    border:none;
+    background:#fff;
+    padding:10px 15px;
+    cursor:pointer;
+    color:#ee4d2d;
+}
+
+/* LOGIN */
+
+.login-btn{
+    border:none;
+    background:white;
+    color:#ee4d2d;
+    padding:10px 18px;
+    border-radius:50px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* CART */
+
 .cart-icon{
     position:relative;
     color:white;
@@ -86,14 +136,14 @@ nav{
 /* HERO */
 
 .hero{
-    margin-top:70px;
+    margin-top:80px;
+    min-height:450px;
     background:
     linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
     url('https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=1200&auto=format&fit=crop');
 
     background-size:cover;
     background-position:center;
-    min-height:350px;
 
     display:flex;
     justify-content:center;
@@ -111,6 +161,47 @@ nav{
 
 .hero-content p{
     font-size:1.2rem;
+    margin-bottom:25px;
+}
+
+.cta-button{
+    background:#ee4d2d;
+    color:white;
+    padding:15px 30px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* CATEGORY */
+
+.categories{
+    max-width:1200px;
+    margin:40px auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+    gap:20px;
+    padding:0 20px;
+}
+
+.category-card{
+    background:white;
+    border-radius:20px;
+    padding:25px 10px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.category-card:hover{
+    transform:translateY(-5px);
+}
+
+.category-card i{
+    font-size:2rem;
+    color:#ee4d2d;
+    margin-bottom:10px;
 }
 
 /* PRODUCTS */
@@ -118,75 +209,18 @@ nav{
 .products{
     max-width:1200px;
     margin:auto;
-    padding:40px 20px;
+    padding:50px 20px;
 }
 
 .section-title{
     text-align:center;
-    font-size:2rem;
-    margin-bottom:30px;
+    font-size:2.5rem;
+    margin-bottom:40px;
 }
-
-/* SEARCH */
-
-.search-container{
-    max-width:700px;
-    margin:20px auto 30px;
-    display:flex;
-    background:white;
-    border-radius:50px;
-    overflow:hidden;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
-}
-
-.search-container input{
-    flex:1;
-    border:none;
-    padding:15px 20px;
-    font-size:1rem;
-    outline:none;
-}
-
-.search-container button{
-    width:70px;
-    border:none;
-    background:#ee4d2d;
-    color:white;
-    font-size:1.2rem;
-    cursor:pointer;
-}
-
-/* CATEGORY */
-
-.categories{
-    display:flex;
-    gap:15px;
-    overflow-x:auto;
-    margin-bottom:30px;
-    padding-bottom:10px;
-}
-
-.category-item{
-    min-width:max-content;
-    background:white;
-    padding:12px 20px;
-    border-radius:50px;
-    cursor:pointer;
-    font-weight:bold;
-    box-shadow:0 3px 10px rgba(0,0,0,0.1);
-    transition:0.3s;
-}
-
-.category-item:hover{
-    background:#ee4d2d;
-    color:white;
-}
-
-/* PRODUCT GRID */
 
 .products-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
     gap:25px;
 }
 
@@ -203,7 +237,7 @@ nav{
 }
 
 .product-image{
-    width:80%;
+    width:70%;
     height:220px;
     object-fit:contain;
     display:block;
@@ -215,26 +249,22 @@ nav{
     padding:20px;
 }
 
-.product-info h3{
-    margin-bottom:10px;
-}
-
 .product-price{
     color:#ee4d2d;
     font-size:1.5rem;
     font-weight:bold;
-    margin-bottom:15px;
+    margin:10px 0;
 }
 
 .product-add-to-cart{
     width:100%;
     border:none;
-    padding:12px;
+    padding:14px;
     border-radius:10px;
     background:#ee4d2d;
     color:white;
-    cursor:pointer;
     font-size:1rem;
+    cursor:pointer;
 }
 
 /* CART */
@@ -242,7 +272,7 @@ nav{
 .cart-modal{
     display:none;
     position:fixed;
-    z-index:3000;
+    z-index:5000;
     left:0;
     top:0;
     width:100%;
@@ -254,7 +284,7 @@ nav{
     background:white;
     width:90%;
     max-width:500px;
-    margin:70px auto;
+    margin:80px auto;
     padding:25px;
     border-radius:20px;
 }
@@ -279,13 +309,13 @@ nav{
 
 .checkout-btn{
     width:100%;
+    margin-top:20px;
     padding:15px;
     border:none;
     border-radius:10px;
     background:#28a745;
     color:white;
     font-size:1rem;
-    margin-top:20px;
     cursor:pointer;
 }
 
@@ -294,7 +324,7 @@ nav{
 #imageModal{
     display:none;
     position:fixed;
-    z-index:5000;
+    z-index:6000;
     left:0;
     top:0;
     width:100%;
@@ -313,10 +343,67 @@ nav{
 .close-image{
     position:absolute;
     top:20px;
-    right:30px;
+    right:35px;
     color:white;
     font-size:45px;
     cursor:pointer;
+}
+
+/* LOGIN MODAL */
+
+.login-modal{
+    display:none;
+    position:fixed;
+    z-index:7000;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+
+    justify-content:center;
+    align-items:center;
+}
+
+.login-content{
+    background:white;
+    width:90%;
+    max-width:400px;
+    border-radius:20px;
+    padding:30px;
+    position:relative;
+}
+
+.login-content h2{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.login-content input{
+    width:100%;
+    padding:15px;
+    margin-bottom:15px;
+    border:1px solid #ddd;
+    border-radius:10px;
+}
+
+.login-submit{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:#ee4d2d;
+    color:white;
+    cursor:pointer;
+}
+
+.voucher-box{
+    margin-top:20px;
+    background:#fff3cd;
+    padding:15px;
+    border-radius:10px;
+    text-align:center;
+    font-weight:bold;
 }
 
 /* FOOTER */
@@ -326,23 +413,24 @@ footer{
     color:white;
     text-align:center;
     padding:40px 20px;
-    margin-top:50px;
 }
 
 footer a{
     color:#25D366;
 }
 
-/* MOBILE */
-
 @media(max-width:768px){
+
+.nav-links{
+    display:none;
+}
+
+.search-box input{
+    width:100px;
+}
 
 .hero-content h1{
     font-size:2rem;
-}
-
-.products-grid{
-    grid-template-columns:1fr 1fr;
 }
 
 }
@@ -353,25 +441,40 @@ footer a{
 <body>
 
 <header>
-
 <nav>
 
 <div class="logo">
 👜 EZA BAG
 </div>
 
+<ul class="nav-links">
+<li><a href="#">Home</a></li>
+<li><a href="#products">Produk</a></li>
+<li><a href="#contact">Kontak</a></li>
+</ul>
+
+<div class="header-right">
+
+<div class="search-box">
+<input type="text" placeholder="Cari tas...">
+<button>
+<i class="fas fa-search"></i>
+</button>
+</div>
+
+<button class="login-btn" onclick="openLogin()">
+<i class="fas fa-user"></i>
+Login
+</button>
+
 <div class="cart-icon" onclick="toggleCart()">
-
 <i class="fas fa-shopping-cart"></i>
-
-<span class="cart-count" id="cartCount">
-0
-</span>
+<span class="cart-count" id="cartCount">0</span>
+</div>
 
 </div>
 
 </nav>
-
 </header>
 
 <!-- HERO -->
@@ -380,71 +483,55 @@ footer a{
 
 <div class="hero-content">
 
-<h1>EZA BAG OFFICIAL</h1>
+<h1>
+EZA BAG OFFICIAL
+</h1>
 
 <p>
-Tas Premium Kualitas Terbaik
+Tas Premium Fashion Kekinian
 </p>
 
+<a href="#products" class="cta-button">
+🛒 Belanja Sekarang
+</a>
+
+</div>
+
+</section>
+
+<!-- CATEGORY -->
+
+<section class="categories">
+
+<div class="category-card">
+<i class="fas fa-shopping-bag"></i>
+<p>Tote Bag</p>
+</div>
+
+<div class="category-card">
+<i class="fas fa-briefcase"></i>
+<p>Travel</p>
+</div>
+
+<div class="category-card">
+<i class="fas fa-school"></i>
+<p>Sekolah</p>
+</div>
+
+<div class="category-card">
+<i class="fas fa-gem"></i>
+<p>Premium</p>
 </div>
 
 </section>
 
 <!-- PRODUCTS -->
 
-<section class="products">
+<section class="products" id="products">
 
 <h2 class="section-title">
-Koleksi Tas Terbaru
+🔥 Produk Terbaru
 </h2>
-
-<!-- SEARCH -->
-
-<div class="search-container">
-
-<input
-type="text"
-id="searchInput"
-placeholder="Cari tas favorit..."
-onkeyup="searchProducts()"
->
-
-<button onclick="searchProducts()">
-<i class="fas fa-search"></i>
-</button>
-
-</div>
-
-<!-- CATEGORY -->
-
-<div class="categories">
-
-<div class="category-item"
-onclick="filterCategory('Semua')">
-👜 Semua
-</div>
-
-<div class="category-item"
-onclick="filterCategory('Mini')">
-🎀 Mini
-</div>
-
-<div class="category-item"
-onclick="filterCategory('Tote')">
-🛍 Tote
-</div>
-
-<div class="category-item"
-onclick="filterCategory('Ransel')">
-🎒 Ransel
-</div>
-
-<div class="category-item"
-onclick="filterCategory('Travel')">
-✈ Travel
-</div>
-
-</div>
 
 <div class="products-grid" id="productsGrid"></div>
 
@@ -456,8 +543,7 @@ onclick="filterCategory('Travel')">
 
 <div class="cart-content">
 
-<span class="close-cart"
-onclick="toggleCart()">
+<span class="close-cart" onclick="toggleCart()">
 &times;
 </span>
 
@@ -466,19 +552,12 @@ onclick="toggleCart()">
 <div id="cartItems"></div>
 
 <div class="total">
-
 Total:
-<span id="cartTotal">
-Rp 0
-</span>
-
+<span id="cartTotal">Rp 0</span>
 </div>
 
-<button class="checkout-btn"
-onclick="checkout()">
-
+<button class="checkout-btn" onclick="checkout()">
 ✅ Checkout
-
 </button>
 
 </div>
@@ -488,8 +567,7 @@ onclick="checkout()">
 
 <div id="imageModal">
 
-<span class="close-image"
-onclick="closeImageModal()">
+<span class="close-image" onclick="closeImageModal()">
 &times;
 </span>
 
@@ -497,9 +575,48 @@ onclick="closeImageModal()">
 
 </div>
 
+<!-- LOGIN MODAL -->
+
+<div class="login-modal" id="loginModal">
+
+<div class="login-content">
+
+<span class="close-image"
+onclick="closeLogin()">
+&times;
+</span>
+
+<h2>
+👤 Login / Signup
+</h2>
+
+<input type="text"
+id="username"
+placeholder="Nama Anda">
+
+<input type="email"
+id="email"
+placeholder="Email">
+
+<button class="login-submit"
+onclick="loginUser()">
+
+Masuk / Daftar
+
+</button>
+
+<div class="voucher-box">
+
+🎁 Pengguna baru dapat voucher 5%
+
+</div>
+
+</div>
+</div>
+
 <!-- FOOTER -->
 
-<footer>
+<footer id="contact">
 
 <h2>📞 Hubungi Kami</h2>
 
@@ -511,8 +628,11 @@ onclick="closeImageModal()">
 </p>
 
 <p>
-📧 Email:
-eza.bag@gmail.com
+📧 Email: eza.bag@gmail.com
+</p>
+
+<p>
+© 2026 EZA BAG OFFICIAL
 </p>
 
 </footer>
@@ -566,6 +686,7 @@ image:'images/tas-travel-500.png'
 ];
 
 let cart = [];
+let currentUser = null;
 
 document.addEventListener('DOMContentLoaded',()=>{
 
@@ -574,11 +695,10 @@ updateCartCount();
 
 });
 
-function renderProducts(data){
+function loadProducts(){
 
 document.getElementById('productsGrid').innerHTML =
-
-data.map(p=>`
+products.map(p=>`
 
 <div class="product-card">
 
@@ -610,57 +730,11 @@ Beli
 
 }
 
-function loadProducts(){
-
-renderProducts(products);
-
-}
-
-function searchProducts(){
-
-const keyword =
-document.getElementById('searchInput')
-.value
-.toLowerCase();
-
-const filtered = products.filter(product=>
-
-product.name.toLowerCase()
-.includes(keyword)
-
-);
-
-renderProducts(filtered);
-
-}
-
-function filterCategory(category){
-
-if(category==='Semua'){
-
-renderProducts(products);
-return;
-
-}
-
-const filtered = products.filter(product=>
-
-product.name.toLowerCase()
-.includes(category.toLowerCase())
-
-);
-
-renderProducts(filtered);
-
-}
-
 function addToCart(id){
 
-const product =
-products.find(x=>x.id===id);
+const product = products.find(x=>x.id===id);
 
-const existing =
-cart.find(x=>x.id===id);
+const existing = cart.find(x=>x.id===id);
 
 if(existing){
 
@@ -680,28 +754,21 @@ alert('✅ Ditambahkan ke keranjang');
 
 function updateCartCount(){
 
-document.getElementById('cartCount')
-.textContent =
-
-cart.reduce(
-(sum,item)=>sum+item.quantity,
-0
-);
+document.getElementById('cartCount').textContent =
+cart.reduce((sum,item)=>sum+item.quantity,0);
 
 }
 
 function toggleCart(){
 
-const modal =
-document.getElementById('cartModal');
+const modal = document.getElementById('cartModal');
 
 modal.style.display =
-
 modal.style.display === 'block'
 ? 'none'
 : 'block';
 
-if(modal.style.display==='block'){
+if(modal.style.display === 'block'){
 
 displayCart();
 
@@ -711,18 +778,13 @@ displayCart();
 
 function displayCart(){
 
-const cartItems =
-document.getElementById('cartItems');
+const cartItems = document.getElementById('cartItems');
 
 const total = cart.reduce(
-(sum,item)=>sum+(item.price*item.quantity),
-0
-);
+(sum,item)=>sum+(item.price*item.quantity),0);
 
 cartItems.innerHTML =
-
 cart.length
-
 ?
 
 cart.map(item=>`
@@ -745,10 +807,22 @@ Rp ${(item.price*item.quantity).toLocaleString('id-ID')}
 
 '<p>Keranjang kosong</p>';
 
-document.getElementById('cartTotal')
-.textContent =
-
+document.getElementById('cartTotal').textContent =
 `Rp ${total.toLocaleString('id-ID')}`;
+
+}
+
+function openImageModal(src){
+
+document.getElementById('imageModal').style.display='flex';
+
+document.getElementById('modalImage').src=src;
+
+}
+
+function closeImageModal(){
+
+document.getElementById('imageModal').style.display='none';
 
 }
 
@@ -762,11 +836,15 @@ return;
 }
 
 const total = cart.reduce(
-(sum,item)=>sum+(item.price*item.quantity),
-0
+(sum,item)=>sum+(item.price*item.quantity),0
 );
 
-const pesan = `Halo EZA BAG OFFICIAL 👋
+const diskon = total * 0.05;
+
+const totalBayar =
+currentUser ? total - diskon : total;
+
+const pesan = `Halo EZA BAG 👋
 
 Saya ingin order:
 
@@ -774,8 +852,14 @@ ${cart.map(item=>
 `${item.name} x${item.quantity}`
 ).join('\n')}
 
+${currentUser ? 'Voucher 5% digunakan 🎉' : ''}
+
 Total:
-Rp ${total.toLocaleString('id-ID')}`;
+Rp ${totalBayar.toLocaleString('id-ID')}
+
+Transfer:
+BNI 1988112715
+A/N AHMAD SYAI`;
 
 window.open(
 `https://wa.me/6287877157090?text=${encodeURIComponent(pesan)}`,
@@ -784,38 +868,75 @@ window.open(
 
 }
 
-function openImageModal(src){
+function openLogin(){
 
-document.getElementById('imageModal')
+document.getElementById('loginModal')
 .style.display='flex';
-
-document.getElementById('modalImage')
-.src=src;
 
 }
 
-function closeImageModal(){
+function closeLogin(){
 
-document.getElementById('imageModal')
+document.getElementById('loginModal')
 .style.display='none';
 
 }
 
-window.onclick = function(e){
+function loginUser(){
 
-if(e.target.id==='imageModal'){
+const username =
+document.getElementById('username').value;
 
-closeImageModal();
+const email =
+document.getElementById('email').value;
+
+if(username==='' || email===''){
+
+alert('Lengkapi data');
+return;
 
 }
 
-if(e.target.id==='cartModal'){
+currentUser = {
+username,
+email
+};
 
-toggleCart();
+localStorage.setItem(
+'ezaUser',
+JSON.stringify(currentUser)
+);
+
+document.querySelector('.login-btn')
+.innerHTML =
+`<i class="fas fa-user-check"></i> ${username}`;
+
+alert(
+`🎉 Selamat ${username}
+
+Anda mendapat voucher 5%`
+);
+
+closeLogin();
 
 }
 
+window.addEventListener('load',()=>{
+
+const savedUser =
+localStorage.getItem('ezaUser');
+
+if(savedUser){
+
+currentUser = JSON.parse(savedUser);
+
+document.querySelector('.login-btn')
+.innerHTML =
+`<i class="fas fa-user-check"></i> ${currentUser.username}`;
+
 }
+
+});
 
 </script>
 
