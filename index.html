@@ -1,18 +1,14 @@
-# EZA BAG OFFICIAL — Versi Premium Ala Shopee
-
-Ganti bagian HTML/CSS kamu dengan template berikut supaya tampil lebih modern seperti aplikasi marketplace.
-
-```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>👜 EZA BAG OFFICIAL</title>
+<title>EZA BAG OFFICIAL</title>
 
 <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#ff6b35">
+<meta name="theme-color" content="#ee4d2d">
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 
@@ -28,18 +24,18 @@ body{
     font-family:Arial,sans-serif;
     background:#f5f5f5;
     color:#333;
-    padding-bottom:80px;
 }
 
 /* HEADER */
+
 header{
     position:fixed;
     top:0;
     width:100%;
     z-index:1000;
-    background:linear-gradient(135deg,#ff6b35,#ff8c42);
+    background:#ee4d2d;
     padding:15px 0;
-    box-shadow:0 4px 15px rgba(0,0,0,0.15);
+    box-shadow:0 3px 10px rgba(0,0,0,0.15);
 }
 
 nav{
@@ -49,24 +45,12 @@ nav{
     justify-content:space-between;
     align-items:center;
     padding:0 20px;
-    gap:15px;
 }
 
 .logo{
     color:white;
-    font-size:1.5rem;
+    font-size:1.8rem;
     font-weight:bold;
-    white-space:nowrap;
-}
-
-.search-box{
-    flex:1;
-    background:white;
-    border-radius:50px;
-    padding:10px 18px;
-    border:none;
-    outline:none;
-    font-size:14px;
 }
 
 .cart-icon{
@@ -78,10 +62,10 @@ nav{
 
 .cart-count{
     position:absolute;
-    top:-8px;
+    top:-10px;
     right:-10px;
-    background:red;
-    color:white;
+    background:white;
+    color:#ee4d2d;
     width:20px;
     height:20px;
     border-radius:50%;
@@ -89,156 +73,221 @@ nav{
     display:flex;
     justify-content:center;
     align-items:center;
+    font-weight:bold;
 }
 
 /* HERO */
-.hero{
-    margin-top:80px;
-    padding:25px 15px;
-}
 
-.banner{
-    height:220px;
-    border-radius:20px;
-    overflow:hidden;
+.hero{
+    margin-top:70px;
     background:
-    linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.4)),
+    linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
     url('https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=1200&auto=format&fit=crop');
 
     background-size:cover;
     background-position:center;
+    min-height:350px;
 
     display:flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
     text-align:center;
+
     color:white;
+    padding:20px;
 }
 
-.banner h1{
-    font-size:2.3rem;
-    margin-bottom:10px;
+.hero-content h1{
+    font-size:3rem;
+    margin-bottom:15px;
 }
 
-.banner p{
-    font-size:1rem;
-}
-
-/* CATEGORY */
-.categories{
-    display:flex;
-    justify-content:space-around;
-    margin:25px 0;
-    gap:10px;
-    overflow:auto;
-}
-
-.category-item{
-    background:white;
-    min-width:90px;
-    padding:15px 10px;
-    border-radius:18px;
-    text-align:center;
-    box-shadow:0 2px 10px rgba(0,0,0,0.08);
-    font-size:13px;
-}
-
-.category-item i{
-    font-size:24px;
-    color:#ff6b35;
-    margin-bottom:8px;
+.hero-content p{
+    font-size:1.2rem;
 }
 
 /* PRODUCTS */
+
 .products{
-    padding:10px 15px 40px;
+    max-width:1200px;
+    margin:auto;
+    padding:40px 20px;
 }
 
 .section-title{
-    font-size:1.5rem;
-    margin-bottom:20px;
-    font-weight:bold;
+    text-align:center;
+    font-size:2rem;
+    margin-bottom:30px;
 }
+
+/* SEARCH */
+
+.search-container{
+    max-width:700px;
+    margin:20px auto 30px;
+    display:flex;
+    background:white;
+    border-radius:50px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.search-container input{
+    flex:1;
+    border:none;
+    padding:15px 20px;
+    font-size:1rem;
+    outline:none;
+}
+
+.search-container button{
+    width:70px;
+    border:none;
+    background:#ee4d2d;
+    color:white;
+    font-size:1.2rem;
+    cursor:pointer;
+}
+
+/* CATEGORY */
+
+.categories{
+    display:flex;
+    gap:15px;
+    overflow-x:auto;
+    margin-bottom:30px;
+    padding-bottom:10px;
+}
+
+.category-item{
+    min-width:max-content;
+    background:white;
+    padding:12px 20px;
+    border-radius:50px;
+    cursor:pointer;
+    font-weight:bold;
+    box-shadow:0 3px 10px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.category-item:hover{
+    background:#ee4d2d;
+    color:white;
+}
+
+/* PRODUCT GRID */
 
 .products-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
-    gap:18px;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
 }
 
 .product-card{
     background:white;
-    border-radius:18px;
+    border-radius:20px;
     overflow:hidden;
-    box-shadow:0 2px 12px rgba(0,0,0,0.08);
-    transition:0.25s;
-    position:relative;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:0.3s;
 }
 
 .product-card:hover{
-    transform:translateY(-5px);
-}
-
-.discount-badge{
-    position:absolute;
-    top:10px;
-    left:10px;
-    background:#ff3d3d;
-    color:white;
-    padding:5px 10px;
-    border-radius:30px;
-    font-size:11px;
-    font-weight:bold;
-    z-index:2;
+    transform:translateY(-8px);
 }
 
 .product-image{
-    width:100%;
-    height:190px;
+    width:80%;
+    height:220px;
     object-fit:contain;
-    background:#fff;
-    padding:10px;
+    display:block;
+    margin:20px auto;
     cursor:pointer;
 }
 
 .product-info{
-    padding:15px;
+    padding:20px;
 }
 
 .product-info h3{
-    font-size:15px;
-    margin-bottom:8px;
-}
-
-.old-price{
-    text-decoration:line-through;
-    color:#999;
-    font-size:13px;
+    margin-bottom:10px;
 }
 
 .product-price{
-    color:#ff5722;
-    font-size:1.2rem;
+    color:#ee4d2d;
+    font-size:1.5rem;
     font-weight:bold;
-    margin:5px 0 12px;
+    margin-bottom:15px;
 }
 
 .product-add-to-cart{
     width:100%;
-    padding:12px;
     border:none;
-    border-radius:12px;
-    background:linear-gradient(135deg,#ff6b35,#ff8c42);
+    padding:12px;
+    border-radius:10px;
+    background:#ee4d2d;
     color:white;
+    cursor:pointer;
+    font-size:1rem;
+}
+
+/* CART */
+
+.cart-modal{
+    display:none;
+    position:fixed;
+    z-index:3000;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+}
+
+.cart-content{
+    background:white;
+    width:90%;
+    max-width:500px;
+    margin:70px auto;
+    padding:25px;
+    border-radius:20px;
+}
+
+.close-cart{
+    float:right;
+    font-size:2rem;
+    cursor:pointer;
+}
+
+.cart-item{
+    display:flex;
+    justify-content:space-between;
+    margin:15px 0;
+}
+
+.total{
+    margin-top:20px;
+    font-size:1.5rem;
     font-weight:bold;
+}
+
+.checkout-btn{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:#28a745;
+    color:white;
+    font-size:1rem;
+    margin-top:20px;
     cursor:pointer;
 }
 
 /* IMAGE MODAL */
+
 #imageModal{
     display:none;
     position:fixed;
-    z-index:9999;
+    z-index:5000;
     left:0;
     top:0;
     width:100%;
@@ -258,91 +307,35 @@ nav{
     position:absolute;
     top:20px;
     right:30px;
-    font-size:40px;
     color:white;
+    font-size:45px;
     cursor:pointer;
 }
 
-/* CART */
-.cart-modal{
-    display:none;
-    position:fixed;
-    left:0;
-    top:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.6);
-    z-index:9999;
-}
+/* FOOTER */
 
-.cart-content{
-    background:white;
-    width:90%;
-    max-width:500px;
-    margin:70px auto;
-    padding:25px;
-    border-radius:20px;
-}
-
-.cart-item{
-    display:flex;
-    justify-content:space-between;
-    margin:15px 0;
-}
-
-.total{
-    margin-top:20px;
-    font-size:1.3rem;
-    font-weight:bold;
-}
-
-.checkout-btn{
-    width:100%;
-    margin-top:20px;
-    padding:15px;
-    border:none;
-    border-radius:12px;
-    background:#28a745;
+footer{
+    background:#333;
     color:white;
-    font-size:1rem;
-    cursor:pointer;
-}
-
-/* BOTTOM NAV */
-.bottom-nav{
-    position:fixed;
-    bottom:0;
-    left:0;
-    width:100%;
-    background:white;
-    display:flex;
-    justify-content:space-around;
-    padding:12px 0;
-    box-shadow:0 -2px 15px rgba(0,0,0,0.1);
-    z-index:9999;
-}
-
-.bottom-nav div{
     text-align:center;
-    font-size:12px;
-    color:#555;
+    padding:40px 20px;
+    margin-top:50px;
 }
 
-.bottom-nav i{
-    font-size:20px;
-    margin-bottom:5px;
-    color:#ff6b35;
+footer a{
+    color:#25D366;
 }
 
 /* MOBILE */
+
 @media(max-width:768px){
 
-.banner h1{
-    font-size:1.8rem;
+.hero-content h1{
+    font-size:2rem;
 }
 
-.logo{
-    font-size:1.1rem;
+.products-grid{
+    grid-template-columns:1fr 1fr;
 }
 
 }
@@ -353,95 +346,169 @@ nav{
 <body>
 
 <header>
+
 <nav>
 
-<div class="logo">👜 EZA BAG</div>
-
-<input
-class="search-box"
-type="text"
-placeholder="Cari tas favorit...">
+<div class="logo">
+👜 EZA BAG
+</div>
 
 <div class="cart-icon" onclick="toggleCart()">
+
 <i class="fas fa-shopping-cart"></i>
-<span class="cart-count" id="cartCount">0</span>
+
+<span class="cart-count" id="cartCount">
+0
+</span>
+
 </div>
 
 </nav>
+
 </header>
+
+<!-- HERO -->
 
 <section class="hero">
 
-<div class="banner">
-<div>
+<div class="hero-content">
+
 <h1>EZA BAG OFFICIAL</h1>
-<p>Tas Premium Fashion Wanita Modern</p>
-</div>
-</div>
 
-<div class="categories">
-
-<div class="category-item">
-<i class="fas fa-shopping-bag"></i><br>
-Tote Bag
-</div>
-
-<div class="category-item">
-<i class="fas fa-briefcase"></i><br>
-Travel
-</div>
-
-<div class="category-item">
-<i class="fas fa-school"></i><br>
-Sekolah
-</div>
-
-<div class="category-item">
-<i class="fas fa-gem"></i><br>
-Premium
-</div>
+<p>
+Tas Premium Kualitas Terbaik
+</p>
 
 </div>
 
 </section>
 
+<!-- PRODUCTS -->
+
 <section class="products">
 
-<h2 class="section-title">🔥 Produk Terlaris</h2>
+<h2 class="section-title">
+Koleksi Tas Terbaru
+</h2>
+
+<!-- SEARCH -->
+
+<div class="search-container">
+
+<input
+type="text"
+id="searchInput"
+placeholder="Cari tas favorit..."
+onkeyup="searchProducts()"
+>
+
+<button onclick="searchProducts()">
+<i class="fas fa-search"></i>
+</button>
+
+</div>
+
+<!-- CATEGORY -->
+
+<div class="categories">
+
+<div class="category-item"
+onclick="filterCategory('Semua')">
+👜 Semua
+</div>
+
+<div class="category-item"
+onclick="filterCategory('Mini')">
+🎀 Mini
+</div>
+
+<div class="category-item"
+onclick="filterCategory('Tote')">
+🛍 Tote
+</div>
+
+<div class="category-item"
+onclick="filterCategory('Ransel')">
+🎒 Ransel
+</div>
+
+<div class="category-item"
+onclick="filterCategory('Travel')">
+✈ Travel
+</div>
+
+</div>
 
 <div class="products-grid" id="productsGrid"></div>
 
 </section>
 
+<!-- CART -->
+
 <div class="cart-modal" id="cartModal">
+
 <div class="cart-content">
 
-<h2>🛒 Keranjang Belanja</h2>
+<span class="close-cart"
+onclick="toggleCart()">
+&times;
+</span>
+
+<h2>🛒 Keranjang</h2>
 
 <div id="cartItems"></div>
 
 <div class="total">
-Total: <span id="cartTotal">Rp 0</span>
+
+Total:
+<span id="cartTotal">
+Rp 0
+</span>
+
 </div>
 
-<button class="checkout-btn" onclick="checkout()">
-✅ Checkout Sekarang
+<button class="checkout-btn"
+onclick="checkout()">
+
+✅ Checkout
+
 </button>
 
 </div>
 </div>
 
+<!-- IMAGE MODAL -->
+
 <div id="imageModal">
-<span class="close-image" onclick="closeImageModal()">&times;</span>
+
+<span class="close-image"
+onclick="closeImageModal()">
+&times;
+</span>
+
 <img id="modalImage">
+
 </div>
 
-<div class="bottom-nav">
-<div><i class="fas fa-home"></i><br>Home</div>
-<div><i class="fas fa-search"></i><br>Cari</div>
-<div><i class="fas fa-shopping-cart"></i><br>Cart</div>
-<div><i class="fas fa-user"></i><br>Akun</div>
-</div>
+<!-- FOOTER -->
+
+<footer>
+
+<h2>📞 Hubungi Kami</h2>
+
+<p>
+📱 WA:
+<a href="https://wa.me/6287877157090">
+0878-7715-7090
+</a>
+</p>
+
+<p>
+📧 Email:
+eza.bag@gmail.com
+</p>
+
+</footer>
 
 <script>
 
@@ -451,7 +518,6 @@ const products = [
 id:1,
 name:'Tas Mini Cantik',
 price:490000,
-oldPrice:'650.000',
 image:'images/Tas-mini-490.png'
 },
 
@@ -459,7 +525,6 @@ image:'images/Tas-mini-490.png'
 id:2,
 name:'Tas Tote Bag Krem',
 price:450000,
-oldPrice:'590.000',
 image:'images/Tote-Bag-krem.png'
 },
 
@@ -467,7 +532,6 @@ image:'images/Tote-Bag-krem.png'
 id:3,
 name:'Tas Ransel Cantik',
 price:470000,
-oldPrice:'700.000',
 image:'images/Tas-ransel-470.png'
 },
 
@@ -475,47 +539,61 @@ image:'images/Tas-ransel-470.png'
 id:4,
 name:'Tas Sekolah Anak',
 price:300000,
-oldPrice:'450.000',
 image:'images/tas-sekolah-300.png'
+},
+
+{
+id:5,
+name:'Tas Sekolah Premium',
+price:450000,
+image:'images/tas-sekolah-450.png'
+},
+
+{
+id:6,
+name:'Tas Travel Premium',
+price:500000,
+image:'images/tas-travel-500.png'
 }
 
 ];
 
 let cart = [];
 
-function loadProducts(){
+document.addEventListener('DOMContentLoaded',()=>{
 
-const grid = document.getElementById('productsGrid');
+loadProducts();
+updateCartCount();
 
-grid.innerHTML = products.map(p => `
+});
+
+function renderProducts(data){
+
+document.getElementById('productsGrid').innerHTML =
+
+data.map(p=>`
 
 <div class="product-card">
 
-<div class="discount-badge">
-🔥 SALE
-</div>
-
-<img
-src="${p.image}"
+<img src="${p.image}"
 class="product-image"
-onclick="openImageModal('${p.image}')">
+onclick="openImageModal('${p.image}')"
+onerror="this.src='https://via.placeholder.com/300x300/ee4d2d/ffffff?text=EZA+BAG';">
 
 <div class="product-info">
 
 <h3>${p.name}</h3>
 
-<div class="old-price">
-Rp ${p.oldPrice}
-</div>
-
 <div class="product-price">
 Rp ${p.price.toLocaleString('id-ID')}
 </div>
 
-<button
-class="product-add-to-cart"
+<button class="product-add-to-cart"
 onclick="addToCart(${p.id})">
-🛒 Beli Sekarang
+
+<i class="fas fa-cart-plus"></i>
+Beli
+
 </button>
 
 </div>
@@ -525,67 +603,144 @@ onclick="addToCart(${p.id})">
 
 }
 
+function loadProducts(){
+
+renderProducts(products);
+
+}
+
+function searchProducts(){
+
+const keyword =
+document.getElementById('searchInput')
+.value
+.toLowerCase();
+
+const filtered = products.filter(product=>
+
+product.name.toLowerCase()
+.includes(keyword)
+
+);
+
+renderProducts(filtered);
+
+}
+
+function filterCategory(category){
+
+if(category==='Semua'){
+
+renderProducts(products);
+return;
+
+}
+
+const filtered = products.filter(product=>
+
+product.name.toLowerCase()
+.includes(category.toLowerCase())
+
+);
+
+renderProducts(filtered);
+
+}
+
 function addToCart(id){
 
-const product = products.find(x=>x.id===id);
+const product =
+products.find(x=>x.id===id);
 
-const existing = cart.find(x=>x.id===id);
+const existing =
+cart.find(x=>x.id===id);
 
 if(existing){
+
 existing.quantity++;
+
 }else{
+
 cart.push({...product,quantity:1});
+
 }
 
 updateCartCount();
 
-alert('✅ Produk ditambahkan');
+alert('✅ Ditambahkan ke keranjang');
 
 }
 
 function updateCartCount(){
 
-const total = cart.reduce((sum,item)=>sum+item.quantity,0);
+document.getElementById('cartCount')
+.textContent =
 
-document.getElementById('cartCount').textContent = total;
+cart.reduce(
+(sum,item)=>sum+item.quantity,
+0
+);
 
 }
 
 function toggleCart(){
 
-const modal = document.getElementById('cartModal');
+const modal =
+document.getElementById('cartModal');
 
 modal.style.display =
+
 modal.style.display === 'block'
 ? 'none'
 : 'block';
 
-if(modal.style.display === 'block'){
+if(modal.style.display==='block'){
+
 displayCart();
+
 }
 
 }
 
 function displayCart(){
 
-const items = document.getElementById('cartItems');
+const cartItems =
+document.getElementById('cartItems');
 
-const total = cart.reduce((sum,item)=>sum+(item.price*item.quantity),0);
+const total = cart.reduce(
+(sum,item)=>sum+(item.price*item.quantity),
+0
+);
 
-items.innerHTML = cart.map(item => `
+cartItems.innerHTML =
+
+cart.length
+
+?
+
+cart.map(item=>`
 
 <div class="cart-item">
-<span>${item.name} x${item.quantity}</span>
-<span>Rp ${(item.price*item.quantity).toLocaleString('id-ID')}</span>
+
+<span>
+${item.name} x${item.quantity}
+</span>
+
+<span>
+Rp ${(item.price*item.quantity).toLocaleString('id-ID')}
+</span>
+
 </div>
 
-`).join('');
+`).join('')
 
-if(!cart.length){
-items.innerHTML = '<p>Keranjang kosong</p>';
-}
+:
 
-document.getElementById('cartTotal').textContent =
+'<p>Keranjang kosong</p>';
+
+document.getElementById('cartTotal')
+.textContent =
+
 `Rp ${total.toLocaleString('id-ID')}`;
 
 }
@@ -593,13 +748,27 @@ document.getElementById('cartTotal').textContent =
 function checkout(){
 
 if(!cart.length){
+
 alert('Keranjang kosong!');
 return;
+
 }
 
-const total = cart.reduce((sum,item)=>sum+(item.price*item.quantity),0);
+const total = cart.reduce(
+(sum,item)=>sum+(item.price*item.quantity),
+0
+);
 
-const pesan = `Halo EZA BAG OFFICIAL 👋\n\nSaya ingin order:\n\n${cart.map(item => `${item.name} x${item.quantity}`).join('\n')}\n\nTotal: Rp ${total.toLocaleString('id-ID')}`;
+const pesan = `Halo EZA BAG OFFICIAL 👋
+
+Saya ingin order:
+
+${cart.map(item=>
+`${item.name} x${item.quantity}`
+).join('\n')}
+
+Total:
+Rp ${total.toLocaleString('id-ID')}`;
 
 window.open(
 `https://wa.me/6287877157090?text=${encodeURIComponent(pesan)}`,
@@ -610,37 +779,38 @@ window.open(
 
 function openImageModal(src){
 
-const modal = document.getElementById('imageModal');
+document.getElementById('imageModal')
+.style.display='flex';
 
-modal.style.display = 'flex';
-
-document.getElementById('modalImage').src = src;
+document.getElementById('modalImage')
+.src=src;
 
 }
 
 function closeImageModal(){
 
- document.getElementById('imageModal').style.display = 'none';
+document.getElementById('imageModal')
+.style.display='none';
 
 }
 
 window.onclick = function(e){
 
-if(e.target.id === 'imageModal'){
+if(e.target.id==='imageModal'){
+
 closeImageModal();
+
 }
 
-if(e.target.id === 'cartModal'){
+if(e.target.id==='cartModal'){
+
 toggleCart();
-}
 
 }
 
-loadProducts();
-updateCartCount();
+}
 
 </script>
 
 </body>
 </html>
-```
