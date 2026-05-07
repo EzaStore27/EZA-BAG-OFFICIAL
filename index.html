@@ -1,3 +1,8 @@
+# EZA BAG OFFICIAL — Versi Premium Ala Shopee
+
+Ganti bagian HTML/CSS kamu dengan template berikut supaya tampil lebih modern seperti aplikasi marketplace.
+
+```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -7,7 +12,7 @@
 <title>👜 EZA BAG OFFICIAL</title>
 
 <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#667eea">
+<meta name="theme-color" content="#ff6b35">
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 
@@ -23,6 +28,7 @@ body{
     font-family:Arial,sans-serif;
     background:#f5f5f5;
     color:#333;
+    padding-bottom:80px;
 }
 
 /* HEADER */
@@ -31,10 +37,9 @@ header{
     top:0;
     width:100%;
     z-index:1000;
-    background:rgba(102,126,234,0.9);
-    backdrop-filter:blur(10px);
-    padding:18px 0;
-    box-shadow:0 4px 20px rgba(0,0,0,0.15);
+    background:linear-gradient(135deg,#ff6b35,#ff8c42);
+    padding:15px 0;
+    box-shadow:0 4px 15px rgba(0,0,0,0.15);
 }
 
 nav{
@@ -44,24 +49,24 @@ nav{
     justify-content:space-between;
     align-items:center;
     padding:0 20px;
+    gap:15px;
 }
 
 .logo{
     color:white;
-    font-size:2rem;
+    font-size:1.5rem;
     font-weight:bold;
+    white-space:nowrap;
 }
 
-.nav-links{
-    display:flex;
-    gap:30px;
-    list-style:none;
-}
-
-.nav-links a{
-    color:white;
-    text-decoration:none;
-    font-weight:bold;
+.search-box{
+    flex:1;
+    background:white;
+    border-radius:50px;
+    padding:10px 18px;
+    border:none;
+    outline:none;
+    font-size:14px;
 }
 
 .cart-icon{
@@ -73,7 +78,7 @@ nav{
 
 .cart-count{
     position:absolute;
-    top:-10px;
+    top:-8px;
     right:-10px;
     background:red;
     color:white;
@@ -89,143 +94,194 @@ nav{
 /* HERO */
 .hero{
     margin-top:80px;
-    min-height:500px;
+    padding:25px 15px;
+}
+
+.banner{
+    height:220px;
+    border-radius:20px;
+    overflow:hidden;
     background:
-    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+    linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.4)),
     url('https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=1200&auto=format&fit=crop');
 
     background-size:cover;
     background-position:center;
+
     display:flex;
-    justify-content:center;
     align-items:center;
+    justify-content:center;
     text-align:center;
     color:white;
-    padding:20px;
-}
-.hero-content h1{
-    font-size:3rem;
-    margin-bottom:15px;
 }
 
-.hero-content p{
-    font-size:1.2rem;
-    margin-bottom:20px;
+.banner h1{
+    font-size:2.3rem;
+    margin-bottom:10px;
 }
 
-.cta-button{
-    background:#ff6b6b;
-    color:white;
-    padding:15px 30px;
-    border-radius:50px;
-    text-decoration:none;
-    font-weight:bold;
+.banner p{
+    font-size:1rem;
 }
 
-.cta-button:hover{
-    background:#ff5252;
+/* CATEGORY */
+.categories{
+    display:flex;
+    justify-content:space-around;
+    margin:25px 0;
+    gap:10px;
+    overflow:auto;
+}
+
+.category-item{
+    background:white;
+    min-width:90px;
+    padding:15px 10px;
+    border-radius:18px;
+    text-align:center;
+    box-shadow:0 2px 10px rgba(0,0,0,0.08);
+    font-size:13px;
+}
+
+.category-item i{
+    font-size:24px;
+    color:#ff6b35;
+    margin-bottom:8px;
 }
 
 /* PRODUCTS */
 .products{
-    max-width:1200px;
-    margin:auto;
-    padding:80px 20px;
+    padding:10px 15px 40px;
 }
 
 .section-title{
-    text-align:center;
-    font-size:2.5rem;
-    margin-bottom:50px;
+    font-size:1.5rem;
+    margin-bottom:20px;
+    font-weight:bold;
 }
 
 .products-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:30px;
+    grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+    gap:18px;
 }
 
 .product-card{
     background:white;
-    border-radius:20px;
+    border-radius:18px;
     overflow:hidden;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
-    transition:0.3s;
+    box-shadow:0 2px 12px rgba(0,0,0,0.08);
+    transition:0.25s;
+    position:relative;
 }
 
 .product-card:hover{
-    transform:translateY(-10px);
+    transform:translateY(-5px);
+}
+
+.discount-badge{
+    position:absolute;
+    top:10px;
+    left:10px;
+    background:#ff3d3d;
+    color:white;
+    padding:5px 10px;
+    border-radius:30px;
+    font-size:11px;
+    font-weight:bold;
+    z-index:2;
 }
 
 .product-image{
-    width:70%;
-    height:180px;
+    width:100%;
+    height:190px;
     object-fit:contain;
-    display:block;
-    margin:20px auto 10px;
+    background:#fff;
+    padding:10px;
     cursor:pointer;
-    transition:0.3s;
-}
-
-.product-image:hover{
-    transform:scale(1.05);
 }
 
 .product-info{
-    padding:20px;
+    padding:15px;
 }
 
 .product-info h3{
-    margin-bottom:10px;
+    font-size:15px;
+    margin-bottom:8px;
+}
+
+.old-price{
+    text-decoration:line-through;
+    color:#999;
+    font-size:13px;
 }
 
 .product-price{
-    color:#ff6b6b;
-    font-size:1.7rem;
+    color:#ff5722;
+    font-size:1.2rem;
     font-weight:bold;
-    margin-bottom:15px;
+    margin:5px 0 12px;
 }
 
 .product-add-to-cart{
     width:100%;
     padding:12px;
     border:none;
-    border-radius:10px;
-    background:linear-gradient(135deg,#667eea,#764ba2);
+    border-radius:12px;
+    background:linear-gradient(135deg,#ff6b35,#ff8c42);
     color:white;
-    font-size:1rem;
+    font-weight:bold;
     cursor:pointer;
 }
 
-.product-add-to-cart:hover{
-    transform:scale(1.03);
+/* IMAGE MODAL */
+#imageModal{
+    display:none;
+    position:fixed;
+    z-index:9999;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.9);
+    justify-content:center;
+    align-items:center;
+}
+
+#modalImage{
+    max-width:90%;
+    max-height:90%;
+    border-radius:20px;
+}
+
+.close-image{
+    position:absolute;
+    top:20px;
+    right:30px;
+    font-size:40px;
+    color:white;
+    cursor:pointer;
 }
 
 /* CART */
 .cart-modal{
     display:none;
     position:fixed;
-    z-index:3000;
     left:0;
     top:0;
     width:100%;
     height:100%;
     background:rgba(0,0,0,0.6);
+    z-index:9999;
 }
 
 .cart-content{
     background:white;
     width:90%;
     max-width:500px;
-    margin:80px auto;
+    margin:70px auto;
     padding:25px;
     border-radius:20px;
-}
-
-.close-cart{
-    float:right;
-    font-size:2rem;
-    cursor:pointer;
 }
 
 .cart-item{
@@ -236,7 +292,7 @@ nav{
 
 .total{
     margin-top:20px;
-    font-size:1.5rem;
+    font-size:1.3rem;
     font-weight:bold;
 }
 
@@ -245,73 +301,49 @@ nav{
     margin-top:20px;
     padding:15px;
     border:none;
-    border-radius:10px;
+    border-radius:12px;
     background:#28a745;
     color:white;
     font-size:1rem;
     cursor:pointer;
 }
 
-/* IMAGE MODAL */
-#imageModal{
-    display:none;
+/* BOTTOM NAV */
+.bottom-nav{
     position:fixed;
-    z-index:5000;
+    bottom:0;
     left:0;
-    top:0;
     width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.9);
-    justify-content:center;
-    align-items:center;
-    padding:20px;
-    overflow:auto;
+    background:white;
+    display:flex;
+    justify-content:space-around;
+    padding:12px 0;
+    box-shadow:0 -2px 15px rgba(0,0,0,0.1);
+    z-index:9999;
 }
 
-#modalImage{
-    max-width:95%;
-    max-height:95vh;
-    width:auto;
-    height:auto;
-    object-fit:contain;
-    border-radius:20px;
-}
-
-.close-image{
-    position:absolute;
-    top:20px;
-    right:35px;
-    color:white;
-    font-size:45px;
-    cursor:pointer;
-}
-
-/* FOOTER */
-footer{
-    background:#333;
-    color:white;
+.bottom-nav div{
     text-align:center;
-    padding:40px 20px;
+    font-size:12px;
+    color:#555;
 }
 
-footer a{
-    color:#25D366;
+.bottom-nav i{
+    font-size:20px;
+    margin-bottom:5px;
+    color:#ff6b35;
 }
 
 /* MOBILE */
 @media(max-width:768px){
 
-    .nav-links{
-        display:none;
-    }
+.banner h1{
+    font-size:1.8rem;
+}
 
-    .hero-content h1{
-        font-size:2rem;
-    }
-
-    .section-title{
-        font-size:2rem;
-    }
+.logo{
+    font-size:1.1rem;
+}
 
 }
 
@@ -323,15 +355,12 @@ footer a{
 <header>
 <nav>
 
-<div class="logo">
-👜 EZA BAG OFFICIAL
-</div>
+<div class="logo">👜 EZA BAG</div>
 
-<ul class="nav-links">
-<li><a href="#">Home</a></li>
-<li><a href="#products">Produk</a></li>
-<li><a href="#contact">Kontak</a></li>
-</ul>
+<input
+class="search-box"
+type="text"
+placeholder="Cari tas favorit...">
 
 <div class="cart-icon" onclick="toggleCart()">
 <i class="fas fa-shopping-cart"></i>
@@ -341,92 +370,78 @@ footer a{
 </nav>
 </header>
 
-<!-- HERO -->
 <section class="hero">
 
-<div class="hero-content">
-
+<div class="banner">
+<div>
 <h1>EZA BAG OFFICIAL</h1>
+<p>Tas Premium Fashion Wanita Modern</p>
+</div>
+</div>
 
-<p>
-Tas Premium Kualitas Terbaik
-</p>
+<div class="categories">
 
-<a href="#products" class="cta-button">
-🛒 Lihat Koleksi
-</a>
+<div class="category-item">
+<i class="fas fa-shopping-bag"></i><br>
+Tote Bag
+</div>
+
+<div class="category-item">
+<i class="fas fa-briefcase"></i><br>
+Travel
+</div>
+
+<div class="category-item">
+<i class="fas fa-school"></i><br>
+Sekolah
+</div>
+
+<div class="category-item">
+<i class="fas fa-gem"></i><br>
+Premium
+</div>
 
 </div>
+
 </section>
 
-<!-- PRODUCTS -->
-<section class="products" id="products">
+<section class="products">
 
-<h2 class="section-title">
-Koleksi Tas EZA BAG Terbaru
-</h2>
+<h2 class="section-title">🔥 Produk Terlaris</h2>
 
 <div class="products-grid" id="productsGrid"></div>
 
 </section>
 
-<!-- CART -->
 <div class="cart-modal" id="cartModal">
-
 <div class="cart-content">
 
-<span class="close-cart" onclick="toggleCart()">
-&times;
-</span>
-
-<h2>🛒 Keranjang</h2>
+<h2>🛒 Keranjang Belanja</h2>
 
 <div id="cartItems"></div>
 
 <div class="total">
-Total:
-<span id="cartTotal">Rp 0</span>
+Total: <span id="cartTotal">Rp 0</span>
 </div>
 
 <button class="checkout-btn" onclick="checkout()">
-✅ Checkout
+✅ Checkout Sekarang
 </button>
 
 </div>
 </div>
 
-<!-- IMAGE MODAL -->
 <div id="imageModal">
-
-<span class="close-image" onclick="closeImageModal()">
-&times;
-</span>
-
+<span class="close-image" onclick="closeImageModal()">&times;</span>
 <img id="modalImage">
-
 </div>
 
-<!-- FOOTER -->
-<footer id="contact">
-
-<h2>📞 Hubungi Kami</h2>
-
-<p>
-📱 WA:
-<a href="https://wa.me/6287877157090">
-0878-7715-7090
-</a>
-</p>
-
-<p>
-📧 Email: eza.bag@gmail.com
-</p>
-
-<p>
-© 2024 EZA BAG OFFICIAL
-</p>
-
-</footer>
+<div class="bottom-nav">
+<div><i class="fas fa-home"></i><br>Home</div>
+<div><i class="fas fa-search"></i><br>Cari</div>
+<div><i class="fas fa-shopping-cart"></i><br>Cart</div>
+<div><i class="fas fa-user"></i><br>Akun</div>
+</div>
 
 <script>
 
@@ -436,6 +451,7 @@ const products = [
 id:1,
 name:'Tas Mini Cantik',
 price:490000,
+oldPrice:'650.000',
 image:'images/Tas-mini-490.png'
 },
 
@@ -443,6 +459,7 @@ image:'images/Tas-mini-490.png'
 id:2,
 name:'Tas Tote Bag Krem',
 price:450000,
+oldPrice:'590.000',
 image:'images/Tote-Bag-krem.png'
 },
 
@@ -450,6 +467,7 @@ image:'images/Tote-Bag-krem.png'
 id:3,
 name:'Tas Ransel Cantik',
 price:470000,
+oldPrice:'700.000',
 image:'images/Tas-ransel-470.png'
 },
 
@@ -457,61 +475,47 @@ image:'images/Tas-ransel-470.png'
 id:4,
 name:'Tas Sekolah Anak',
 price:300000,
+oldPrice:'450.000',
 image:'images/tas-sekolah-300.png'
-},
-
-{
-id:5,
-name:'Tas Sekolah Premium',
-price:450000,
-image:'images/tas-sekolah-450.png'
-},
-
-{
-id:6,
-name:'Tas Travel Premium',
-price:500000,
-image:'images/tas-travel-500.png'
 }
 
 ];
 
 let cart = [];
 
-document.addEventListener('DOMContentLoaded',()=>{
-
-loadProducts();
-updateCartCount();
-
-});
-
 function loadProducts(){
 
-document.getElementById('productsGrid').innerHTML =
-products.map(p=>`
+const grid = document.getElementById('productsGrid');
+
+grid.innerHTML = products.map(p => `
 
 <div class="product-card">
 
-<img src="${p.image}"
-alt="${p.name}"
+<div class="discount-badge">
+🔥 SALE
+</div>
+
+<img
+src="${p.image}"
 class="product-image"
-onclick="openImageModal('${p.image}')"
-onerror="this.src='https://via.placeholder.com/300x300/667eea/ffffff?text=EZA+BAG';">
+onclick="openImageModal('${p.image}')">
 
 <div class="product-info">
 
 <h3>${p.name}</h3>
 
+<div class="old-price">
+Rp ${p.oldPrice}
+</div>
+
 <div class="product-price">
 Rp ${p.price.toLocaleString('id-ID')}
 </div>
 
-<button class="product-add-to-cart"
+<button
+class="product-add-to-cart"
 onclick="addToCart(${p.id})">
-
-<i class="fas fa-cart-plus"></i>
-Beli
-
+🛒 Beli Sekarang
 </button>
 
 </div>
@@ -528,25 +532,22 @@ const product = products.find(x=>x.id===id);
 const existing = cart.find(x=>x.id===id);
 
 if(existing){
-
 existing.quantity++;
-
 }else{
-
 cart.push({...product,quantity:1});
-
 }
 
 updateCartCount();
 
-showNotification('✅ Ditambahkan ke keranjang');
+alert('✅ Produk ditambahkan');
 
 }
 
 function updateCartCount(){
 
-document.getElementById('cartCount').textContent =
-cart.reduce((sum,item)=>sum+item.quantity,0);
+const total = cart.reduce((sum,item)=>sum+item.quantity,0);
+
+document.getElementById('cartCount').textContent = total;
 
 }
 
@@ -560,192 +561,86 @@ modal.style.display === 'block'
 : 'block';
 
 if(modal.style.display === 'block'){
-
 displayCart();
-
 }
 
 }
 
 function displayCart(){
 
-const cartItems = document.getElementById('cartItems');
+const items = document.getElementById('cartItems');
 
-const total = cart.reduce(
-(sum,item)=>sum+(item.price*item.quantity),0);
+const total = cart.reduce((sum,item)=>sum+(item.price*item.quantity),0);
 
-cartItems.innerHTML =
-cart.length
-?
-
-cart.map(item=>`
+items.innerHTML = cart.map(item => `
 
 <div class="cart-item">
-
-<span>
-${item.name} x${item.quantity}
-</span>
-
-<span>
-Rp ${(item.price*item.quantity).toLocaleString('id-ID')}
-</span>
-
+<span>${item.name} x${item.quantity}</span>
+<span>Rp ${(item.price*item.quantity).toLocaleString('id-ID')}</span>
 </div>
 
-`).join('')
+`).join('');
 
-:
-
-'<p>Keranjang kosong</p>';
+if(!cart.length){
+items.innerHTML = '<p>Keranjang kosong</p>';
+}
 
 document.getElementById('cartTotal').textContent =
 `Rp ${total.toLocaleString('id-ID')}`;
 
 }
 
+function checkout(){
+
+if(!cart.length){
+alert('Keranjang kosong!');
+return;
+}
+
+const total = cart.reduce((sum,item)=>sum+(item.price*item.quantity),0);
+
+const pesan = `Halo EZA BAG OFFICIAL 👋\n\nSaya ingin order:\n\n${cart.map(item => `${item.name} x${item.quantity}`).join('\n')}\n\nTotal: Rp ${total.toLocaleString('id-ID')}`;
+
+window.open(
+`https://wa.me/6287877157090?text=${encodeURIComponent(pesan)}`,
+'_blank'
+);
+
+}
+
 function openImageModal(src){
 
-document.getElementById('imageModal').style.display='flex';
+const modal = document.getElementById('imageModal');
 
-document.getElementById('modalImage').src=src;
+modal.style.display = 'flex';
+
+document.getElementById('modalImage').src = src;
 
 }
 
 function closeImageModal(){
 
-document.getElementById('imageModal').style.display='none';
+ document.getElementById('imageModal').style.display = 'none';
 
 }
 
 window.onclick = function(e){
 
-if(e.target.id==='imageModal'){
-
+if(e.target.id === 'imageModal'){
 closeImageModal();
-
 }
 
-if(e.target.id==='cartModal'){
-
+if(e.target.id === 'cartModal'){
 toggleCart();
+}
 
 }
 
-};
-
-function checkout(){
-
-if(!cart.length){
-
-alert('Keranjang kosong!');
-return;
-
-}
-
-const total = cart.reduce(
-(sum,item)=>sum+(item.price*item.quantity),0
-);
-
-const bank = 'BNI';
-const norek = '1988112715';
-const atasNama = 'AHMAD SYAI';
-
-const detailOrder = cart.map(item =>
-
-`• ${item.name}
-Qty : ${item.quantity}
-Subtotal : Rp ${(item.price * item.quantity).toLocaleString('id-ID')}`
-
-).join('\n\n');
-
-const pesan = `Halo EZA BAG OFFICIAL 👋
-
-Saya ingin melakukan pemesanan:
-
-${detailOrder}
-
-========================
-TOTAL PEMBAYARAN
-Rp ${total.toLocaleString('id-ID')}
-========================
-
-PEMBAYARAN TRANSFER:
-Bank : ${bank}
-No Rek : ${norek}
-Atas Nama : ${atasNama}
-
-Mohon konfirmasi setelah transfer 🙏`;
-
-alert(
-`✅ PESANAN BERHASIL DIBUAT
-
-Silakan lakukan pembayaran:
-
-========================
-BANK : ${bank}
-NO REK : ${norek}
-A/N : ${atasNama}
-========================
-
-TOTAL:
-Rp ${total.toLocaleString('id-ID')}
-
-Setelah transfer klik OK
-untuk lanjut ke WhatsApp`
-);
-
-window.location.href =
-`https://wa.me/6287877157090?text=${encodeURIComponent(pesan)}`;
-
-cart = [];
-
+loadProducts();
 updateCartCount();
 
-toggleCart();
-
-}
-
-function showNotification(text){
-
-const notif = document.createElement('div');
-
-notif.style.cssText = `
-position:fixed;
-top:100px;
-right:20px;
-background:#28a745;
-color:white;
-padding:15px 20px;
-border-radius:10px;
-z-index:6000;
-font-weight:bold;
-`;
-
-notif.textContent = text;
-
-document.body.appendChild(notif);
-
-setTimeout(()=>{
-
-notif.remove();
-
-},2000);
-
-}
-
 </script>
-<script>
 
-if('serviceWorker' in navigator){
-
-  window.addEventListener('load', ()=>{
-
-    navigator.serviceWorker.register('service-worker.js');
-
-  });
-
-}
-
-</script>
 </body>
 </html>
+```
