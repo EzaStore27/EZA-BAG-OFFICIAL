@@ -9,6 +9,7 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -16,7 +17,7 @@
 }
 
 body{
-    font-family:Arial, sans-serif;
+    font-family:Arial,sans-serif;
     background:#f5f5f5;
     color:#333;
 }
@@ -113,7 +114,6 @@ nav{
     border-radius:50px;
     text-decoration:none;
     font-weight:bold;
-    transition:0.3s;
 }
 
 .cta-button:hover{
@@ -151,7 +151,6 @@ nav{
     transform:translateY(-10px);
 }
 
-/* IMAGE FIX */
 .product-image{
     width:70%;
     height:180px;
@@ -190,7 +189,6 @@ nav{
     color:white;
     font-size:1rem;
     cursor:pointer;
-    transition:0.3s;
 }
 
 .product-add-to-cart:hover{
@@ -260,11 +258,16 @@ nav{
     background:rgba(0,0,0,0.9);
     justify-content:center;
     align-items:center;
+    padding:20px;
+    overflow:auto;
 }
 
 #modalImage{
-    max-width:90%;
-    max-height:90%;
+    max-width:95%;
+    max-height:95vh;
+    width:auto;
+    height:auto;
+    object-fit:contain;
     border-radius:20px;
 }
 
@@ -273,7 +276,7 @@ nav{
     top:20px;
     right:35px;
     color:white;
-    font-size:40px;
+    font-size:45px;
     cursor:pointer;
 }
 
@@ -305,6 +308,7 @@ footer a{
     }
 
 }
+
 </style>
 </head>
 
@@ -312,27 +316,40 @@ footer a{
 
 <header>
 <nav>
-    <div class="logo">👜 EZA BAG OFFICIAL</div>
 
-    <ul class="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#products">Produk</a></li>
-        <li><a href="#contact">Kontak</a></li>
-    </ul>
+<div class="logo">
+👜 EZA BAG OFFICIAL
+</div>
 
-    <div class="cart-icon" onclick="toggleCart()">
-        <i class="fas fa-shopping-cart"></i>
-        <span class="cart-count" id="cartCount">0</span>
-    </div>
+<ul class="nav-links">
+<li><a href="#">Home</a></li>
+<li><a href="#products">Produk</a></li>
+<li><a href="#contact">Kontak</a></li>
+</ul>
+
+<div class="cart-icon" onclick="toggleCart()">
+<i class="fas fa-shopping-cart"></i>
+<span class="cart-count" id="cartCount">0</span>
+</div>
+
 </nav>
 </header>
 
 <!-- HERO -->
 <section class="hero">
+
 <div class="hero-content">
-    <h1>EZA BAG OFFICIAL</h1>
-    <p>Tas Premium Kualitas Terbaik</p>
-    <a href="#products" class="cta-button">🛒 Lihat Koleksi</a>
+
+<h1>EZA BAG OFFICIAL</h1>
+
+<p>
+Tas Premium Kualitas Terbaik
+</p>
+
+<a href="#products" class="cta-button">
+🛒 Lihat Koleksi
+</a>
+
 </div>
 </section>
 
@@ -580,65 +597,6 @@ document.getElementById('cartTotal').textContent =
 
 }
 
-function checkout(){
-
-if(!cart.length){
-
-alert('Keranjang kosong!');
-return;
-
-}
-
-const total = cart.reduce(
-(sum,item)=>sum+(item.price*item.quantity),0);
-
-const pesan =
-`Halo EZA BAG OFFICIAL!
-
-Saya ingin order:
-
-${cart.map(item=>
-`${item.name} x${item.quantity}`
-).join('\n')}
-
-Total:
-Rp ${total.toLocaleString('id-ID')}`;
-
-window.open(
-`https://wa.me/6287877157090?text=${encodeURIComponent(pesan)}`,
-'_blank'
-);
-
-}
-
-function showNotification(text){
-
-const notif = document.createElement('div');
-
-notif.style.cssText = `
-position:fixed;
-top:100px;
-right:20px;
-background:#28a745;
-color:white;
-padding:15px 20px;
-border-radius:10px;
-z-index:6000;
-font-weight:bold;
-`;
-
-notif.textContent = text;
-
-document.body.appendChild(notif);
-
-setTimeout(()=>{
-
-notif.remove();
-
-},2000);
-
-}
-
 function openImageModal(src){
 
 document.getElementById('imageModal').style.display='flex';
@@ -667,47 +625,34 @@ toggleCart();
 
 }
 
-}
-<!-- GANTI FUNCTION checkout() LAMA DENGAN YANG INI -->
+};
 
 function checkout(){
 
-    if(!cart.length){
+if(!cart.length){
 
-        alert('Keranjang kosong!');
-        return;
+alert('Keranjang kosong!');
+return;
 
-    }
+}
 
-    const total = cart.reduce(
-        (sum,item)=>sum+(item.price*item.quantity),0
-    );
+const total = cart.reduce(
+(sum,item)=>sum+(item.price*item.quantity),0
+);
 
-    // =========================
-    // DATA PEMBAYARAN TRANSFER
-    // =========================
+const bank = 'BNI';
+const norek = '1988112715';
+const atasNama = 'AHMAD SYAI';
 
-    const bank = 'BCA';
-    const norek = '1234567890';
-    const atasNama = 'EZA BAG OFFICIAL';
+const detailOrder = cart.map(item =>
 
-    // =========================
-    // DETAIL ORDER
-    // =========================
-
-    const detailOrder = cart.map(item =>
-
-        `• ${item.name}
+`• ${item.name}
 Qty : ${item.quantity}
 Subtotal : Rp ${(item.price * item.quantity).toLocaleString('id-ID')}`
 
-    ).join('\n\n');
+).join('\n\n');
 
-    // =========================
-    // PESAN WHATSAPP
-    // =========================
-
-    const pesan = `Halo EZA BAG OFFICIAL 👋
+const pesan = `Halo EZA BAG OFFICIAL 👋
 
 Saya ingin melakukan pemesanan:
 
@@ -725,11 +670,7 @@ Atas Nama : ${atasNama}
 
 Mohon konfirmasi setelah transfer 🙏`;
 
-    // =========================
-    // POPUP INFO PEMBAYARAN
-    // =========================
-
-    alert(
+alert(
 `✅ PESANAN BERHASIL DIBUAT
 
 Silakan lakukan pembayaran:
@@ -745,21 +686,44 @@ Rp ${total.toLocaleString('id-ID')}
 
 Setelah transfer klik OK
 untuk lanjut ke WhatsApp`
-    );
+);
 
-    // =========================
-    // BUKA WHATSAPP
-    // =========================
-
-    window.location.href =
+window.location.href =
 `https://wa.me/6287877157090?text=${encodeURIComponent(pesan)}`;
 
- // RESET CART
 cart = [];
 
 updateCartCount();
 
 toggleCart();
+
+}
+
+function showNotification(text){
+
+const notif = document.createElement('div');
+
+notif.style.cssText = `
+position:fixed;
+top:100px;
+right:20px;
+background:#28a745;
+color:white;
+padding:15px 20px;
+border-radius:10px;
+z-index:6000;
+font-weight:bold;
+`;
+
+notif.textContent = text;
+
+document.body.appendChild(notif);
+
+setTimeout(()=>{
+
+notif.remove();
+
+},2000);
 
 }
 
